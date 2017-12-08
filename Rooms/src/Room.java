@@ -15,10 +15,10 @@ public class Room {
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 	}
-	
-	public void leaveRoom(Person x)
-	{
-		occupant = null;
+	public void leaveRoom(Person p) {
+		// TODO Auto-generated method stub
+		
 	}
+	
 	
 }

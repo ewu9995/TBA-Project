@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class Runner {
 	
 
@@ -8,6 +9,7 @@ public class Runner {
 	public static void main(String[] args)
 	{
 		Room[][] building = new Room[5][5];
+		ARoom[][] building1 = new ARoom[5][5];
 		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
@@ -18,11 +20,24 @@ public class Runner {
 			}
 		}
 		
+		for (int x = 0; x<building1.length; x++)
+		{
+			for (int y = 0; y < building1[x].length; y++)
+			{
+				building1[x][y] = new ARoom(x,y);
+			}
+		}
+		
+		
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x, y);
-		 
+		
+		int x1 = (int)(Math.random()*building1.length);
+		int y1 = (int)(Math.random()*building1.length);
+		building[x1][y1] = new WinningRoom(x1, y1);
+	
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
@@ -45,6 +60,8 @@ public class Runner {
 		in.close();
 	}
 	
+
+		
 	public static boolean validMove(String move, Person p, Room[][] map)
 	{
 		move = move.toLowerCase().trim();
@@ -100,6 +117,72 @@ public class Runner {
 					
 		}
 		return true;
+	}
+		
+		
+		public static boolean validMove(String move, Person p, ARoom[][] map)
+		{
+			move = move.toLowerCase().trim();
+			switch (move) {
+				case "n":
+					if (p.getxLoc() > 0)
+					{
+						map[p.getxLoc()][p.getyLoc()].leaveARoom(p);
+						map[p.getxLoc()-1][p.getyLoc()].enterRoom(p);
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				case "e":
+					if (p.getyLoc()< map[p.getyLoc()].length -1)
+					{
+						map[p.getxLoc()][p.getyLoc()].leaveARoom(p);
+						map[p.getxLoc()][p.getyLoc() + 1].enterRoom(p);
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+
+				case "s":
+					if (p.getxLoc() < map.length - 1)
+					{
+						map[p.getxLoc()][p.getyLoc()].leaveARoom(p);
+						map[p.getxLoc()+1][p.getyLoc()].enterRoom(p);
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+
+				case "w":
+					if (p.getyLoc() > 0)
+					{
+						map[p.getxLoc()][p.getyLoc()].leaveARoom(p);
+						map[p.getxLoc()][p.getyLoc()-1].enterRoom(p);
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				default:
+					break;
+						
+			}
+			return true;
+	
+		
+		
+		
+		
+		
+		
+		
 	}
 	public static void gameOff()
 	{
