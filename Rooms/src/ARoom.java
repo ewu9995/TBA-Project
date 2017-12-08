@@ -1,13 +1,12 @@
 
-public class ARoom {
+public class ARoom extends Room{
 
-		Person occupant;
-		int xLoc,yLoc;
-		
+	
 		public ARoom(int x, int y)
 		{
-			xLoc = x;
-			yLoc = y;
+			super(int x, int y);
+			
+			
 		}
 		public void enterRoom(Person x)
 		{
