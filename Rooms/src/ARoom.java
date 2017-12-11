@@ -15,7 +15,6 @@ public class ARoom extends Room{
 		}
 		
 		
-		
 	}
 
 

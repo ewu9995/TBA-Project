@@ -21,7 +21,6 @@ public class Runner {
 		}
 		
 
-	
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
