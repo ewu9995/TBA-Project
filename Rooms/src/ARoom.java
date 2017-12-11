@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class ARoom extends Room{
 
@@ -14,6 +15,8 @@ public class ARoom extends Room{
 			x.setxLoc(this.xLoc);
 			x.setyLoc(this.yLoc);
 		}
+		
+		Scanner input = new Scanner(System.in); 
 		
 		
 	}
