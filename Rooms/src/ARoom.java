@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class ARoom extends Room{
 
 	
@@ -10,13 +8,12 @@ public class ARoom extends Room{
 		}
 		public void enterRoom(Person x)
 		{
-			System.out.println("You enter a room. Get out.");
+			System.out.println("You enter a room. Get out and go to the winning or the other room.");
 			occupant = x;
 			x.setxLoc(this.xLoc);
 			x.setyLoc(this.yLoc);
 		}
 		
-		Scanner input = new Scanner(System.in); 
 		
 		
 	}

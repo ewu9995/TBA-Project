@@ -31,6 +31,15 @@ public class Runner {
 		int y1 = (int)(Math.random()*building.length);
 		building[x1][y1] = new ARoom(x1, y1);
 		
+		
+		int x2 = (int)(Math.random()*building.length);
+		int y2 = (int)(Math.random()*building.length);
+		building[x2][y2] = new AnotherRoom(x2, y2);
+		
+		int x3 = (int)(Math.random()*building.length);
+		int y3 = (int)(Math.random()*building.length);
+		building[x3][y3] = new MyRoom(x3, y3);
+		
 	
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);

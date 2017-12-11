@@ -1,4 +1,3 @@
-
 public class Room {
 	Person occupant;
 	int xLoc,yLoc;
