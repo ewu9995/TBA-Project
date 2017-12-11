@@ -9,20 +9,12 @@ public class ARoom extends Room{
 		}
 		public void enterRoom(Person x)
 		{
-			System.out.println("You enter the room!");
+			System.out.println("You enter a room. Get out.");
 			occupant = x;
 			x.setxLoc(this.xLoc);
 			x.setyLoc(this.yLoc);
 		}
 		
-		public void leaveRoom(Person x)
-		{
-			occupant = null;
-		}
-		public void leaveARoom(Person p) {
-			// TODO Auto-generated method stub
-			
-		}
 		
 	}
 
