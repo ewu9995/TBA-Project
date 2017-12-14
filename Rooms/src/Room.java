@@ -18,5 +18,9 @@ public class Room {
 		// TODO Auto-generated method stub
 		
 	}
+	public void print() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
