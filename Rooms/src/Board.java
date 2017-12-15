@@ -1,6 +1,7 @@
 
 public class Board {
 	private Room [][] rooms;
+	private Room[][] map;
 	public Board (Room [][] rooms) {
 		this.rooms = rooms;
 	}
@@ -12,6 +13,12 @@ public class Board {
 			} System.out.println();
 		}
 	}
-	
+	 public Room[][] getMap() {
+	        return getMap();
+	    }
+
+	    public void setMap(Room[][] Map) {
+	        this.map = map;
+	    }
 	
 }
