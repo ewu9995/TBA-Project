@@ -1,4 +1,4 @@
-public class Room {
+public abstract class Room {
 	Person occupant;
 	int xLoc,yLoc;
 	
@@ -9,7 +9,7 @@ public class Room {
 	}
 	public void enterRoom(Person x)
 	{
-		System.out.println("You enter a plain old room");
+		System.out.println("You are moving around.");
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
@@ -18,9 +18,6 @@ public class Room {
 		// TODO Auto-generated method stub
 		
 	}
-	public void print() {
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void print();
 	
 }

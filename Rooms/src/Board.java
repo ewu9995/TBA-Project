@@ -19,12 +19,21 @@ public class Board {
 	}
 	
 	
-	 public Room[][] getMap() {
-	        return getMap();
+	 public Room[][] getMap(Room[][] Map, Room[][] map) {
+	        return getMap(map, map);
 	    }
 
-	    public void setMap(Room[][] Map) {
+	    public void setMap(Room[][] Map, Room[][] map) {
 	        this.map = map;
 	    }
+
+		public Room[][] getMap() {
+			return map;
+		}
+
+		public void setMap(Room[][] map) {
+			this.map = map;
+		}
+
 	
 }

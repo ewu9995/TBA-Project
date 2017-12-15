@@ -16,7 +16,7 @@ public class Runner {
 		{
 			for (int y = 0; y < building[x].length; y++)
 			{
-				building[x][y] = new Room(x,y);
+				building[x][y] = new  GameOver(x,y);
 			}
 		}
 		
@@ -40,6 +40,7 @@ public class Runner {
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
+		
 			if(validMove(move, player1, building))
 			{
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
