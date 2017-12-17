@@ -1,8 +1,14 @@
 
-public class Rooms extends Rooms{
+public class Rooms extends Room{
 
-	public Rooms() {
-		// TODO Auto-generated constructor stub
+	public Rooms(int x, int y) {
+		super(x,y);
+	}
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
