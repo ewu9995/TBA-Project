@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Runner {
 	
 
@@ -16,7 +15,8 @@ public class Runner {
 		{
 			for (int y = 0; y < building[x].length; y++)
 			{
-				building[x][y] = new  Rooms(x,y);
+				building[x][y] = new  Room(x,y);
+				building[x][y].print();
 			}
 		}
 		
@@ -44,7 +44,6 @@ public class Runner {
 			if(validMove(move, player1, building))
 			{
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
-				
 			}
 			else {
 				System.out.println("Please choose a valid move.");

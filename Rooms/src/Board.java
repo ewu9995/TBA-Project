@@ -9,7 +9,7 @@ public class Board {
 	}
 	
 	public Board(int size)	{
-		this.rooms=new Room[8][8];
+		this.rooms=new Room[size][size];
 	}
 	
 	public void printBoard() {
