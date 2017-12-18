@@ -30,9 +30,9 @@ public class Room {
 		System.out.print("[");
 		occupant.print();
 	
-		System.out.println("]");}
+		System.out.print("]");}
 		if (explored) {
-		System.out.println("X");
+		System.out.print("X");
 			}
 	}
 }
