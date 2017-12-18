@@ -21,18 +21,18 @@ public class Room {
 	}
 	public void print() {
 	if (!explored && occupant == null)
-	{
+		{
 		System.out.print("[ ]");
-	}
+		}
 	
-	else if (occupant != null)
-	{
+		else if (occupant != null)
+			{
 		System.out.print("[");
 		occupant.print();
-	} 
-	System.out.println("]");
-	if (explored) {
-		System.out.println("explored");
-	}
+	
+		System.out.println("]");}
+		if (explored) {
+		System.out.println("X");
+			}
 	}
 }

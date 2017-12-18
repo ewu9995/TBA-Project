@@ -1,15 +1,16 @@
 
 
 public class Board {
-	private Room [][] rooms;
-	private Room[][] map;
+	private static Room [][] rooms;
 	
 	public Board (Room [][] rooms) {
-		this.rooms = rooms;
+		Board.rooms = rooms;
 	}
 	
+
+	
 	public Board(int size)	{
-		this.rooms=new Room[size][size];
+		Board.rooms=new Room[8][8];
 	}
 	
 	public void printBoard() {
@@ -19,27 +20,17 @@ public class Board {
 			} System.out.println();
 		}
 	}
-	
-
-    public void printMap()
-    {
 
 
-        for(Room[] row : map)
-        {
-            for (Room room : row)
-            {
-                room.print();
-            }
-            System.out.println();
-        }
-    }
-	
 
-		public Room[][] getMap() {
-			return map;
+
+		public Room[][] getBoard() {
+			return rooms;
 		}
 
 
+		public void  setBoard(Room[][] rooms) {
+			Board.rooms=rooms;
+		}
 	
 }

@@ -40,10 +40,11 @@ public class Runner {
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
-		
+			Board map = new Board(building);
 			if(validMove(move, player1, building))
 			{
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+				map.printBoard();
 			}
 			else {
 				System.out.println("Please choose a valid move.");
