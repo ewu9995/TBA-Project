@@ -31,9 +31,12 @@ public class Runner {
 		int y1 = (int)(Math.random()*building.length);
 		building[6][3] = new GameOver(x1, y1);
 	
+		int x3 = (int)(Math.random()*building.length);
+		int y3 = (int)(Math.random()*building.length);
+		building[1][1] = new Riddle(x3, y3);
 	
 		 //Setup player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0,0);
+		Person player1 = new Person("FirstName", "FamilyName", 0,0, y3);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
@@ -123,7 +126,9 @@ public class Runner {
 	{
 		gameOn = false;
 	}
-	
+
+
+
 
 
 }
