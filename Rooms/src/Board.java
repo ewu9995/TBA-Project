@@ -10,19 +10,16 @@ public class Board {
 
 	
 	public Board(int size)	{
-		Board.rooms=new Room[8][8];
+		Board.rooms=new Room[size][size];
 	}
 	
 	public void printBoard() {
 		for (Room[]i : rooms) {
-			for(Room x:i) {
+			for(Room x : i) {
 				x.print();
 			} System.out.println();
 		}
 	}
-
-
-
 
 		public Room[][] getBoard() {
 			return rooms;
