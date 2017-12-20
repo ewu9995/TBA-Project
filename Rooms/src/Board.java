@@ -27,5 +27,8 @@ public class Board {
 		public void  setBoard(Room[][] rooms) {
 			Board.rooms=rooms;
 		}
+		public String toString() {
+			return "[ ]";
+		}
 	
 }
