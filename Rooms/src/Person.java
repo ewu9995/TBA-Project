@@ -38,14 +38,5 @@ public class Person {
 		this.keys = keys;
 	}
 
-	public void printRoom() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void print() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

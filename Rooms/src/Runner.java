@@ -16,7 +16,6 @@ public class Runner {
 			for (int y = 0; y < building[x].length; y++)
 			{
 				building[x][y] = new  Room(x,y);
-				building[x][y].print();
 			}
 		}
 		

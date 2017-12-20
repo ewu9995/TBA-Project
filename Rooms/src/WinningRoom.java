@@ -17,11 +17,7 @@ public class WinningRoom extends Room {
 		System.out.println("Congratulations! You have escaped!");
 		Runner.gameOff();
 	}
-	@Override
-	public void print() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 
 }

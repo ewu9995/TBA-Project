@@ -20,11 +20,7 @@ public class GameOver extends Room{
 		System.out.println("  Uh-oh, you've fell into a trap and have died. Maybe start over?");
 		Runner.gameOff();
 	}
-	@Override
-	public void print() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 
 }

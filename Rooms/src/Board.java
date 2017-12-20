@@ -1,5 +1,3 @@
-
-
 public class Board {
 	private static Room [][] rooms;
 	
