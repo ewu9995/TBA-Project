@@ -10,29 +10,27 @@ public class Room {
 	}
 	public void enterRoom(Person x)
 	{
-		System.out.println("You enter a plain old room");
+		System.out.println("You are moving around.");
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 	}
-	
-	public void leaveRoom(Person x)
-	{
-		occupant = null;
-	}
-	
-	public void print() {
-		if (!explored && occupant == null)
-			{
-			System.out.print("[ ]");
-			}
+	public void leaveRoom(Person p) {
+		// TODO Auto-generated method stub
 		
-			else if (occupant != null)
-				{
-			System.out.print("[X]");
-		;}
-			if (explored) {
-			System.out.print("X");
-				}
+	}
+	public void print() {
+	if (!explored && occupant == null)
+		{
+		System.out.print("[ ]");
 		}
+	
+		else if (occupant != null)
+			{
+		System.out.print("[X]");
+	;}
+		if (explored) {
+		System.out.print("X");
+			}
+	}
 }
