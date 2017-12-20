@@ -46,7 +46,7 @@ public class Runner {
 			Board map = new Board(building);
 			if(validMove(move, player1, building))
 			{
-				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc() + " keys = " + player1.getKeys());
 				map.printBoard();
 			}
 			else {
