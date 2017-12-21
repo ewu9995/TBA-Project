@@ -92,8 +92,12 @@ public boolean key = false;
 	
 	
 	public void leaveRoom(Person p) {
-		if (key)
+		if (key == true) {
+			Riddle x = new Riddle(xLoc, xLoc);
+			x.leaveRoom(p);
+		}
 		System.out.println("You have successfully obtained a key!");
+		
 		
 	}
 }

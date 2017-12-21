@@ -4,10 +4,14 @@ public class Runner {
 	
 
 	private static boolean gameOn = true;
+	private static int a;
+	private static int b;
 	
 	public static void main(String[] args)
 	{
 		Room[][] building = new Room[8][8];
+		
+		
 		
 		
 		//Fill the building with normal rooms
@@ -23,26 +27,36 @@ public class Runner {
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[4][3] = new WinningRoom(x, y);
+		building[x][y] = new WinningRoom(x, y);
 		
 		//game over room
 		int x1 = (int)(Math.random()*building.length);
 		int y1 = (int)(Math.random()*building.length);
-		building[6][3] = new GameOver(x1, y1);
+		building[x1][y1] = new GameOver(x1, y1);
+		
+		int x2 = (int)(Math.random()*building.length);
+		int y2 = (int)(Math.random()*building.length);
+		building[x2][y2] = new Hallway(x2, y2);
+		building[x2][y2] = new Hallway(x2, y2);
+		
 	
 		int x3 = (int)(Math.random()*building.length);
 		int y3 = (int)(Math.random()*building.length);
 		building[1][1] = new Riddle(x3, y3);
+		
+		Board map = new Board(building);
 	
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0, y3);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
+		System.out.println("Welcome to the Escape Room. Find the keys and escape or you will die!");
+		System.out.println("But first, choose your board size.");
 		while(gameOn)
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
-			Board map = new Board(building);
+		
 			if(validMove(move, player1, building))
 			{
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc() + " keys = " + player1.getKeys());
