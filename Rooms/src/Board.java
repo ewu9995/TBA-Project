@@ -14,26 +14,27 @@ public class Board {
 	}
 	
 	
-	public void chooseBoard(String statement){
+	public static Room[][] chooseBoard(String statement){
 		Scanner in = new Scanner(System.in);
 		System.out.println("What size would you want your room to be? Large, medium, or small?");
 		String response = "";
 		if (findKeyword(statement, "large", 0) >= 0)
 		{
-			Board.rooms= new Room[20][20];
+			return Board.rooms= new Room[20][20];
 		}
 		if (findKeyword(statement, "medium", 0) >= 0)
 		{
-			Board.rooms= new Room[14][14];
+			return Board.rooms= new Room[14][14];
 		}
 		if (findKeyword(statement, "small", 0) >= 0)
 		{
-			Board.rooms= new Room[8][8];
-		}	
+			return Board.rooms= new Room[8][8];
+		}
+		return null;	
 		
 	}
 	
-	private int findKeyword(String statement, String goal, int startPos)
+	private static int findKeyword(String statement, String goal, int startPos)
 	{
 		String phrase = statement.trim().toLowerCase();
 		goal = goal.toLowerCase();

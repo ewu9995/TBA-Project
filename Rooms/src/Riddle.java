@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Riddle extends Room{
 
-public boolean key = false;	
+public boolean key = false;
+private String statement;	
 	
 	public Riddle(int x, int y) {
 		super(x, y);
@@ -18,12 +19,12 @@ public boolean key = false;
 		System.out.println("You've found a riddle room...");
 		System.out.println("A text reads: Solve this riddle for a key or start over again:");
 		System.out.println("I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost everybody.");
-		
+		getResponse(statement);
 	}
 	
 		Scanner in = new Scanner(System.in);
 		private boolean explored = false;
-		public void getResponse(String statement) throws Exception
+		public void getResponse(String statement)
 		{
 			String response = "";
 			if (findKeyword(statement, "Pencil Lead", 0) >= 0)

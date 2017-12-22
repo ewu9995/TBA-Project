@@ -4,14 +4,19 @@ public class Runner {
 	
 
 	private static boolean gameOn = true;
+	private static int size;
+
 
 	public static void main(String[] args)
 	{
 		Room[][] building = new Room[8][8];
 		
-		System.out.println("Welcome to Escape Room: Apartement Edition. In this game you will explore random rooms."
-				+ "\nThe objective of this game is to find the correct rooms to find the keys to escape or you will die!");
-		System.out.println("But first, choose your board size.");
+		System.out.println("Welcome to Escape Room: Apartment Edition. In this game you will explore random rooms."
+				+ "\nThe objective of this game is to find the correct rooms to find the keys to escape or it's game over!");
+		System.out.println("To begin, choose your board size.(Press enter key)");
+		Scanner g = new Scanner (System.in);
+		String statement = g.nextLine();
+		Board.chooseBoard(statement);
 		
 		
 		//Fill the building with normal rooms
@@ -42,7 +47,7 @@ public class Runner {
 	
 		int x3 = (int)(Math.random()*building.length);
 		int y3 = (int)(Math.random()*building.length);
-		building[1][1] = new Riddle(x3, y3);
+		building[x3][y3] = new Riddle(x3, y3);
 		
 		int x4 = (int)(Math.random()*building.length);
 		int y4 = (int)(Math.random()*building.length);
