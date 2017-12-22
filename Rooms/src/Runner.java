@@ -9,7 +9,9 @@ public class Runner {
 	{
 		Room[][] building = new Room[8][8];
 		
-		
+		System.out.println("Welcome to Escape Room: Apartement Edition. In this game you will explore random rooms."
+				+ "\nThe objective of this game is to find the correct rooms to find the keys to escape or you will die!");
+		System.out.println("But first, choose your board size.");
 		
 		
 		//Fill the building with normal rooms
@@ -41,6 +43,16 @@ public class Runner {
 		int x3 = (int)(Math.random()*building.length);
 		int y3 = (int)(Math.random()*building.length);
 		building[1][1] = new Riddle(x3, y3);
+		
+		int x4 = (int)(Math.random()*building.length);
+		int y4 = (int)(Math.random()*building.length);
+		building[x4][y4] = new DarkRoom(x4, y4);
+		
+		int x5 = (int)(Math.random()*building.length);
+		int y5 = (int)(Math.random()*building.length);
+		building[x5][y5] = new GuessingGame(x5, y5);
+		
+		
 	
 		Board map = new Board(building);
 	
@@ -48,9 +60,6 @@ public class Runner {
 		Person player1 = new Person("FirstName", "FamilyName", 0,0, y3);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
-		System.out.println("Welcome to Escape Room: Apartement Edition. In this game you will explore random rooms."
-				+ "\nThe objective of this game is to find the correct rooms to find the keys to escape or you will die!");
-		System.out.println("But first, choose your board size.");
 		while(gameOn)
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");

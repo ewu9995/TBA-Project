@@ -16,7 +16,7 @@ public class GuessingGame extends Room{
 		x.setyLoc(this.yLoc);
 		System.out.println("You've found a room filled with numbers...");
 		System.out.println("You think to yourself: Math!?!!!");
-		System.out.println("You look arounf for clues on how to escape....");
+		System.out.println("You look around for clues on how to escape....");
 		System.out.println("You find a machine that reads: Solve this number guesssing game for a key.");
 		guessingGame();
 	}

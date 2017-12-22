@@ -114,7 +114,7 @@ public class DarkRoom extends Room {
 		}
 		else if(explored == true)
 		{
-			System.out.print("[X]");
+			System.out.print("[D]");
 		}
 	}
 }
