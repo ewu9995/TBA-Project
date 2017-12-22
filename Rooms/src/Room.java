@@ -19,18 +19,21 @@ public class Room {
 		// TODO Auto-generated method stub
 		
 	}
-	public void print() {
-	if (!explored && occupant == null)
+	public void print()
+	{
+		if(explored == false && occupant == null)
 		{
-		System.out.print("[ ]");
+			System.out.print("[ ]");
 		}
-	
-		else if (occupant != null)
-			{
-		System.out.print("[X]");
-	;}
-		if (explored) {
-		System.out.print("X");
-			}
+		else if(occupant != null)
+		{
+			System.out.print("[");
+			occupant.print();
+			System.out.print("]");
+		}
+		else if(explored == true)
+		{
+			System.out.print("[X]");
+		}
 	}
 }

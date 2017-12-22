@@ -40,19 +40,16 @@ public class Runner {
 	
 		int x3 = (int)(Math.random()*building.length);
 		int y3 = (int)(Math.random()*building.length);
-		building[6][1] = new Riddle(x3, y3);
-		
-		int x4 = (int)(Math.random()*building.length);
-		int y4 = (int)(Math.random()*building.length);
-		building[1][1] = new GuessingGame(x4, y4);
-		
+		building[1][1] = new Riddle(x3, y3);
+	
 		Board map = new Board(building);
 	
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0, y3);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
-		System.out.println("Welcome to the Escape Room. Find the keys and escape or you will die!");
+		System.out.println("Welcome to Escape Room: Apartement Edition. In this game you will explore random rooms."
+				+ "\nThe objective of this game is to find the correct rooms to find the keys to escape or you will die!");
 		System.out.println("But first, choose your board size.");
 		while(gameOn)
 		{

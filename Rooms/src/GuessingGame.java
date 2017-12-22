@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 public class GuessingGame extends Room{
-	public boolean key = false;	
+	public boolean key = false;
+	private boolean explored = false;	
 	
 	public GuessingGame(int x, int y) {
 		super(x,y);
@@ -13,7 +14,10 @@ public class GuessingGame extends Room{
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		System.out.println("Solve this number guesssing game for a key.");
+		System.out.println("You've found a room filled with numbers...");
+		System.out.println("You think to yourself: Math!?!!!");
+		System.out.println("You look arounf for clues on how to escape....");
+		System.out.println("You find a machine that reads: Solve this number guesssing game for a key.");
 		guessingGame();
 	}
 	
@@ -29,7 +33,7 @@ public class GuessingGame extends Room{
 
 	            do {
 
-	                  System.out.print("Enter a guess (1-1000): ");
+	                  System.out.print("Enter a number from 1-1000 ");
 
 	                  guess = x.nextInt();
 
@@ -45,7 +49,7 @@ public class GuessingGame extends Room{
 
 	                  else if (guess > number) {
 
-	                        System.out.println("Guess is samller.");}
+	                        System.out.println("Guess is smaller.");}
 
 	            } while (guess != number);
 
@@ -62,6 +66,23 @@ public class GuessingGame extends Room{
 		}
 		
 		
+	}
+	public void print()
+	{
+		if(explored == false && occupant == null)
+		{
+			System.out.print("[ ]");
+		}
+		else if(occupant != null)
+		{
+			System.out.print("[");
+			occupant.print();
+			System.out.print("]");
+		}
+		else if(explored  == true)
+		{
+			System.out.print("[G]");
+		}
 	}
 
 	}

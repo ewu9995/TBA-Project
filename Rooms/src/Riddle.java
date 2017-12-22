@@ -15,12 +15,14 @@ public boolean key = false;
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		System.out.println("Solve this riddle for a key or start over again:");
+		System.out.println("You've found a riddle room...");
+		System.out.println("A text reads: Solve this riddle for a key or start over again:");
 		System.out.println("I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost everybody.");
 		
 	}
 	
 		Scanner in = new Scanner(System.in);
+		private boolean explored = false;
 		public void getResponse(String statement) throws Exception
 		{
 			String response = "";
@@ -98,5 +100,23 @@ public boolean key = false;
 		}
 		System.out.println("You have successfully obtained a key!");
 		
+	}
+	
+	public void print()
+	{
+		if(explored == false && occupant == null)
+		{
+			System.out.print("[ ]");
+		}
+		else if(occupant != null)
+		{
+			System.out.print("[");
+			occupant.print();
+			System.out.print("]");
+		}
+		else if(explored == true)
+		{
+			System.out.print("[R]");
+		}
 	}
 }
