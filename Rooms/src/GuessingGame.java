@@ -1,13 +1,23 @@
 import java.util.Scanner;
 
-public class GuessingGame extends Riddle{
+public class GuessingGame extends Room{
 	public boolean key = false;	
 	
 	public GuessingGame(int x, int y) {
 		super(x,y);
 	}
 	
-	public  void NumberGuessingGame() {
+	public void enterRoom(Person x)
+	{
+		
+		occupant = x;
+		x.setxLoc(this.xLoc);
+		x.setyLoc(this.yLoc);
+		System.out.println("Solve this number guesssing game for a key.");
+		guessingGame();
+	}
+	
+	public void guessingGame() {
 
 	            int number;
 
@@ -45,8 +55,11 @@ public class GuessingGame extends Riddle{
 		if (key == true) {
 			GuessingGame x = new GuessingGame(xLoc, xLoc);
 			x.leaveRoom(p);
+			System.out.println("You have successfully obtained a key!");
 		}
-		System.out.println("You have successfully obtained a key!");
+		else {
+			Runner.gameOff();
+		}
 		
 		
 	}

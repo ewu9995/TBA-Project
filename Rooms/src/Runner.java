@@ -4,9 +4,7 @@ public class Runner {
 	
 
 	private static boolean gameOn = true;
-	private static int a;
-	private static int b;
-	
+
 	public static void main(String[] args)
 	{
 		Room[][] building = new Room[8][8];
@@ -23,6 +21,7 @@ public class Runner {
 			}
 		}
 		
+
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
@@ -41,7 +40,11 @@ public class Runner {
 	
 		int x3 = (int)(Math.random()*building.length);
 		int y3 = (int)(Math.random()*building.length);
-		building[1][1] = new Riddle(x3, y3);
+		building[6][1] = new Riddle(x3, y3);
+		
+		int x4 = (int)(Math.random()*building.length);
+		int y4 = (int)(Math.random()*building.length);
+		building[1][1] = new GuessingGame(x4, y4);
 		
 		Board map = new Board(building);
 	
@@ -50,8 +53,7 @@ public class Runner {
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		System.out.println("Welcome to the Escape Room. Find the keys and escape or you will die!");
-		System.out.println("But first, choose your board size. Choose between small, medium, or large rooms.");
-		
+		System.out.println("But first, choose your board size.");
 		while(gameOn)
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
@@ -139,7 +141,6 @@ public class Runner {
 	{
 		gameOn = false;
 	}
-
 
 
 
