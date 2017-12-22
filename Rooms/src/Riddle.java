@@ -98,6 +98,5 @@ public boolean key = false;
 		}
 		System.out.println("You have successfully obtained a key!");
 		
-		
 	}
 }

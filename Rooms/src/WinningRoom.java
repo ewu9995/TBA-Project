@@ -17,7 +17,6 @@ public class WinningRoom extends Room {
 		System.out.println("Congratulations! You have escaped!");
 		Runner.gameOff();
 	}
-	
-	
+		
 
 }

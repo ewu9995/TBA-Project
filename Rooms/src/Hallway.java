@@ -16,5 +16,4 @@ public class Hallway extends Room{
 
 		System.out.print("[H]");
 		}
-
 }

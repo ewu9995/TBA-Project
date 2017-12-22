@@ -23,7 +23,6 @@ public class Runner {
 			}
 		}
 		
-
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
@@ -51,7 +50,8 @@ public class Runner {
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		System.out.println("Welcome to the Escape Room. Find the keys and escape or you will die!");
-		System.out.println("But first, choose your board size.");
+		System.out.println("But first, choose your board size. Choose between small, medium, or large rooms.");
+		
 		while(gameOn)
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");

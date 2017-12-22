@@ -11,6 +11,10 @@ public class GameOver extends Room{
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		System.out.println("You enter a room," + 
+				   "\nsuddenly metal bars come out from the entrance," + 
+				   "\nlocking you in, slowly the lights start to dim out " +
+				   "You reached the end of your adventure... Better luck next time!");
 		System.out.println("   _____          __  __ ______    ______      ________ _____  \r\n" + 
 				"  / ____|   /\\   |  \\/  |  ____|  / __ \\ \\    / /  ____|  __ \\ \r\n" + 
 				" | |  __   /  \\  | \\  / | |__    | |  | \\ \\  / /| |__  | |__) |\r\n" + 
@@ -21,6 +25,4 @@ public class GameOver extends Room{
 		Runner.gameOff();
 	}
 	
-	
-
 }

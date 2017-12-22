@@ -9,21 +9,21 @@ public class Board {
 	
 
 	
-	public Board(String statement)	{
+	public Board(String statement){
 		Scanner in = new Scanner(System.in);
 		System.out.println("What size would you want your room to be? Big, medium, or small?");
 		String response =" ";
 		if (findKeyword(statement, "big", 0) >= 0)
 		{
-			Board.rooms=new Room[20][20];
+			Board.rooms= new Room[20][20];
 		}
 		if (findKeyword(statement, "medium", 0) >= 0)
 		{
-			Board.rooms=new Room[14][14];
+			Board.rooms= new Room[14][14];
 		}
 		if (findKeyword(statement, "small", 0) >= 0)
 		{
-			Board.rooms=new Room[8][8];
+			Board.rooms= new Room[8][8];
 		}
 		
 		
