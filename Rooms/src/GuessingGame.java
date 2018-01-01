@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GuessingGame extends Room{
+public class GuessingGame extends Room implements Key{
 	public boolean key = false;
 	private boolean explored = false;	
 	
@@ -83,6 +83,12 @@ public class GuessingGame extends Room{
 		{
 			System.out.print("[G]");
 		}
+	}
+
+	@Override
+	public void getKey() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	}

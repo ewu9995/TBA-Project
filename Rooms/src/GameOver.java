@@ -1,5 +1,5 @@
 
-public class GameOver extends Room{
+public class GameOver extends Room {
 
 	public GameOver(int x, int y) {
 		super(x, y);

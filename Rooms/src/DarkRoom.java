@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class DarkRoom extends Room {
+public class DarkRoom extends Room implements Key{
 
 	private boolean explored = false;
 	public DarkRoom(int x, int y) {
@@ -116,5 +116,11 @@ public class DarkRoom extends Room {
 		{
 			System.out.print("[D]");
 		}
+	}
+
+	@Override
+	public void getKey() {
+		// TODO Auto-generated method stub
+		
 	}
 }

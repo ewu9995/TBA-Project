@@ -29,14 +29,6 @@ public class Person {
 		this.keys = keys;
 	}
 
-	public int getKeys() {
-		keys++;
-		return keys;
-	}
-
-	public void setKeys(int keys) {
-		this.keys = keys;
-	}
 
 	public void print() {
 		System.out.print("O");

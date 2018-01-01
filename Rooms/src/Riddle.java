@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class Riddle extends Room{
+public class Riddle extends Room implements Key{
 
-public boolean key = false;	
+public int key;
 	
 	public Riddle(int x, int y) {
 		super(x, y);
@@ -93,14 +93,7 @@ public boolean key = false;
 	}
 	
 	
-	public void leaveRoom(Person p) {
-		if (key == true) {
-			Riddle x = new Riddle(xLoc, xLoc);
-			x.leaveRoom(p);
-		}
-		System.out.println("You have successfully obtained a key!");
-		
-	}
+
 	
 	public void print()
 	{
@@ -118,5 +111,11 @@ public boolean key = false;
 		{
 			System.out.print("[R]");
 		}
+	}
+
+	@Override
+	public void getKey() {
+		// TODO Auto-generated method stub
+		
 	}
 }

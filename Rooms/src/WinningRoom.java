@@ -1,4 +1,4 @@
-public class WinningRoom extends Room {
+public class WinningRoom extends Room implements Key{
 
 
 
@@ -16,6 +16,11 @@ public class WinningRoom extends Room {
 		System.out.println("You see the light of day.");
 		System.out.println("Congratulations! You have escaped!");
 		Runner.gameOff();
+	}
+	@Override
+	public void getKey() {
+		// TODO Auto-generated method stub
+		
 	}
 		
 
