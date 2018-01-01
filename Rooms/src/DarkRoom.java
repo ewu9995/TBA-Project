@@ -13,6 +13,9 @@ public class DarkRoom extends Room implements Key{
 		x.setyLoc(this.yLoc);
 		System.out.println("You've found this dark room...");
 		System.out.println("Would you like to open it?");
+		Scanner in = new Scanner (System.in);
+		String statement = in.nextLine();
+		getResponse(null);
 	}
 	
 	
@@ -26,7 +29,7 @@ public class DarkRoom extends Room implements Key{
 		String response = "";
 		 if (findKeyword(statement, "Yes", 0) >= 0)
 			{
-				response = "You feel your way around the dark room... You find a sharp object -- it's a key!" ;
+				response = "The door suddenly locks behind you... You feel your way around the dark room... You find a sharp object -- it's a key!" ;
 	           boolean key = true;
 	           keys++;
 			}
