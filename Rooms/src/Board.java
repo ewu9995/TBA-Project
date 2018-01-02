@@ -20,15 +20,15 @@ public class Board {
 		String response = "";
 		if (findKeyword(statement, "large", 0) >= 0)
 		{
-			return Board.rooms= new Room[20][20];
+			Room[][] building = new Room[20][20];
 		}
 		if (findKeyword(statement, "medium", 0) >= 0)
 		{
-			return Board.rooms= new Room[14][14];
+			Room[][] building = new Room[14][14];
 		}
 		if (findKeyword(statement, "small", 0) >= 0)
 		{
-			return Board.rooms= new Room[8][8];
+			Room[][] building = new Room[8][8];
 		}
 		return null;	
 		

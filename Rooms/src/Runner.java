@@ -9,16 +9,17 @@ public class Runner {
 
 	public static void main(String[] args)
 	{
-		Room[][] building = new Room[8][8];
 		
 		System.out.println("Welcome to Escape Room: Apartment Edition. In this game you will explore random rooms."
 				+ "\nThe objective of this game is to find the correct rooms to find the keys to escape or it's game over!");
 		System.out.println("To begin, choose your board size.(Press enter key)");
 		Scanner g = new Scanner (System.in);
 		String statement = g.nextLine();
-		Board.chooseBoard(statement);
+		chooseBoard(statement);
 		
-		
+	
+	
+			
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
 		{
@@ -32,7 +33,7 @@ public class Runner {
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x, y);
+		building[5][5] = new WinningRoom(x, y);
 		
 		//game over room
 		int x1 = (int)(Math.random()*building.length);
@@ -72,7 +73,7 @@ public class Runner {
 		
 			if(validMove(move, player1, building))
 			{
-				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc() + " keys = ");
+				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc() + " keys =" + player1.getKeys());
 				map.printBoard();
 			}
 			else {
@@ -85,7 +86,32 @@ public class Runner {
 	}
 	
 
+
+
+
+	
+	public static void chooseBoard(String statement){
+		Scanner in = new Scanner(System.in);
+		System.out.println("What size would you want your room to be? Large, medium, or small?");
+		String response = "";
+		if (findKeyword(statement, "large", 0) >= 0)
+		{
+			Room[][] building = new Room[20][20];
+		}
+		if (findKeyword(statement, "medium", 0) >= 0)
+		{
+			Room[][] building = new Room[14][14];
+		}
+		if (findKeyword(statement, "small", 0) >= 0)
+		{
+			return (Room[][] building = new Room[8][8]);
+		}
+		return;	
 		
+	}
+	
+
+
 	public static boolean validMove(String move, Person p, Room[][] map)
 	{
 		move = move.toLowerCase().trim();

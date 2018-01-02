@@ -34,6 +34,12 @@ public class Person {
 		System.out.print("O");
 		
 	}
-
-
+	
+	public int getKeys() {
+		return keys;
+	}
+	
+	public void setKeys() {
+		
+	}
 }

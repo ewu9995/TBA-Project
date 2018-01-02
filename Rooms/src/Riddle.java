@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Riddle extends Room implements Key{
+public class Riddle extends Room {
 
 
 public int key;
@@ -117,9 +117,5 @@ private String statement;
 		}
 	}
 
-	@Override
-	public void getKey() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
