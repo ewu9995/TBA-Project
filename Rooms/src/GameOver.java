@@ -1,8 +1,8 @@
 
 public class GameOver extends Room {
 
-	public GameOver(int x, int y) {
-		super(x, y);
+	public GameOver(int x, int y, int keys) {
+		super(x, y, keys);
 		// TODO Auto-generated constructor stub
 	}
 	@Override
@@ -11,6 +11,7 @@ public class GameOver extends Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		x.setKeys(this.keys);
 		System.out.println("...");
 		System.out.println("   _____          __  __ ______    ______      ________ _____  \r\n" + 
 				"  / ____|   /\\   |  \\/  |  ____|  / __ \\ \\    / /  ____|  __ \\ \r\n" + 

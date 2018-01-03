@@ -39,7 +39,7 @@ public class Person {
 		return keys;
 	}
 	
-	public void setKeys() {
-		
+	public void setKeys(int keys) {
+		this.keys = keys;
 	}
 }

@@ -1,8 +1,8 @@
 
 public class Hallway extends Room{
 
-	public Hallway(int x, int y) {
-		super(x,y);
+	public Hallway(int x, int y, int keys) {
+		super(x,y, keys);
 	}
 	public void enterRoom(Person x)
 	{
