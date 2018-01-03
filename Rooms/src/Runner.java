@@ -8,7 +8,7 @@ public class Runner {
 
 	private static boolean gameOn = true;
 	private static int size;
-	private static Room[][] building;
+	private static Room[][] building = new Room [size][size];
 	
 
 
@@ -17,12 +17,9 @@ public class Runner {
 		
 		System.out.println("Welcome to Escape Room: Apartment Edition. In this game you will explore random rooms."
 				+ "\nThe objective of this game is to find the correct rooms to find the keys to escape or it's game over!");
-		System.out.println("To begin, choose your board size.(Press enter key)");
+		System.out.println("To begin, choose your board size.(Press any key)");
 		Scanner g = new Scanner (System.in);
 		String statement = g.nextLine();
-		chooseBoard(statement);
-		
-	
 			
 		//Fill the building with normal rooms
 		for (int x = 0; x < building.length; x++)
@@ -37,7 +34,7 @@ public class Runner {
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[5][5] = new WinningRoom(x, y, y);
+		building[0][0] = new WinningRoom(x, y, y);
 		
 		//game over room
 		int x1 = (int)(Math.random()*building.length);
@@ -95,20 +92,23 @@ public class Runner {
 
 
 	
-	public static Array chooseBoard(String statement){
-		Scanner in = new Scanner(System.in);
+	public static Room[][] chooseBoard(String statement){
+	
 		System.out.println("What size would you want your room to be? Large, medium, or small?");
 		if (findKeyword(statement, "large", 0) >= 0)
 		{
 			  Room[][] building = new Room[18][18];
+			  return building;
 		}
 		if (findKeyword(statement, "medium", 0) >= 0)
 		{
 			Room[][] building = new Room[12][12];
+			return building;
 		}
 		if (findKeyword(statement, "small", 0) >= 0)
 		{
 			Room[][] building = new Room[6][6];
+			return building;
 		}
 		return null;	
 		
