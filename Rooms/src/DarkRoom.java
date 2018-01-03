@@ -14,9 +14,7 @@ public class DarkRoom extends Room {
 		x.setKeys(this.keys);
 		System.out.println("You've found this dark room...");
 		System.out.println("Would you like to open it?");
-		Scanner in = new Scanner (System.in);
-		String statement = in.nextLine();
-		getResponse(null);
+		getResponse();
 	}
 	
 	
@@ -25,14 +23,17 @@ public class DarkRoom extends Room {
 	private boolean key;
 	
 	
-	public void getResponse(String statement) 
+	public void getResponse() 
 	{
+		Scanner in = new Scanner (System.in);
+		String statement = in.nextLine();
 		String response = "";
 		 if (findKeyword(statement, "Yes", 0) >= 0)
 			{
 				response = "The door suddenly locks behind you... You feel your way around the dark room... You find a sharp object -- it's a key!" ;
 	           boolean key = true;
 	           keys++;
+	           key = true;
 			}
 		 else if (findKeyword(statement, "No", 0) >= 0)
 			{

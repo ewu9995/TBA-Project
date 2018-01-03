@@ -2,6 +2,7 @@ public class Room {
 	Person occupant;
 	int xLoc,yLoc;
 	int keys;
+	boolean key;
 	private boolean explored = false;
 	
 	public Room(int x, int y, int keys)

@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Riddle extends Room {
 
 
-public int key;
 
 private String statement;	
 
@@ -23,29 +22,32 @@ private String statement;
 		System.out.println("You've found a riddle room...");
 		System.out.println("A text reads: Solve this riddle for a key or start over again:");
 		System.out.println("I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost everybody.");
-		getResponse(statement);
+		getResponse();
 	}
 	
-		Scanner in = new Scanner(System.in);
+
 		private boolean explored = false;
-		public void getResponse(String statement)
+		
+		public void getResponse()
 		{
-			String response = "";
+			Scanner in = new Scanner(System.in);
+			String statement = in.nextLine();
+			
 			if (findKeyword(statement, "Pencil Lead", 0) >= 0)
 		{
-			response = "Correct";
-			boolean key = true;
+				System.out.println("Correct!");
+			keys++;
+			key=true;
 		}
 			else
-				response = "\"   _____          __  __ ______    ______      ________ _____  \\r\\n\" + \r\n" + 
+				 System.out.println( "\"   _____          __  __ ______    ______      ________ _____  \\r\\n\" + \r\n" + 
 						"					\"  / ____|   /\\\\   |  \\\\/  |  ____|  / __ \\\\ \\\\    / /  ____|  __ \\\\ \\r\\n\" + \r\n" + 
 						"					\" | |  __   /  \\\\  | \\\\  / | |__    | |  | \\\\ \\\\  / /| |__  | |__) |\\r\\n\" + \r\n" + 
 						"					\" | | |_ | / /\\\\ \\\\ | |\\\\/| |  __|   | |  | |\\\\ \\\\/ / |  __| |  _  / \\r\\n\" + \r\n" + 
 						"					\" | |__| |/ ____ \\\\| |  | | |____  | |__| | \\\\  /  | |____| | \\\\ \\\\ \\r\\n\" + \r\n" + 
-						"					\"  \\\\_____/_/    \\\\_\\\\_|  |_|______|  \\\\____/   \\\\/   |______|_|  \\\\_\\\\\"";
+						"					\"  \\\\_____/_/    \\\\_\\\\_|  |_|______|  \\\\____/   \\\\/   |______|_|  \\\\_\\\\\"");
 				System.out.println(" Looks like you've failed! Start over again!");
 				Runner.gameOff();	
-		
 		}
 	
 	
@@ -97,7 +99,12 @@ private String statement;
 		return -1;
 	}
 	
-	
+	public void leaveRoom(Person p) {
+		if(key) {
+			leaveRoom(p);
+		}
+		
+	}
 
 	
 	public void print()

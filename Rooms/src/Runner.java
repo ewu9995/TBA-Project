@@ -17,7 +17,7 @@ public class Runner {
 		
 		System.out.println("Welcome to Escape Room: Apartment Edition. In this game you will explore random rooms."
 				+ "\nThe objective of this game is to find the correct rooms to find the keys to escape or it's game over!");
-		System.out.println("To begin, choose your board size.(Press any key)");
+		System.out.println("To begin, choose your board size.(Press any key to advance to choose menu)");
 		Scanner g = new Scanner (System.in);
 		String statement = g.nextLine();
 		Room [][] building = chooseBoard();
@@ -58,7 +58,7 @@ public class Runner {
 		
 		int x5 = (int)(Math.random()*building.length);
 		int y5 = (int)(Math.random()*building.length);
-		building[x5][y5] = new GuessingGame(x5, y5, y5);
+		building[1][1] = new GuessingGame(x5, y5, y5);
 		
 		
 	
@@ -89,13 +89,9 @@ public class Runner {
 	
 
 	
-
-
-
-	
 	public static Room[][] chooseBoard(){
 	
-		System.out.println("What size would you want your room to be? Large, medium, or small?");
+		System.out.println("What size would you want your room to be? Large, medium, or small?(Please enter the choice word as it as)");
 		Scanner x = new Scanner (System.in);
 		String statement1 = x.nextLine();
 		if (findKeyword(statement1, "large", 0) >= 0)
@@ -166,10 +162,6 @@ public class Runner {
 	}
 	
 	
-
-
-
-
 	public static boolean validMove(String move, Person p, Room[][] map)
 	{
 		move = move.toLowerCase().trim();
@@ -226,9 +218,6 @@ public class Runner {
 		}
 		return true;
 	}
-		
-		
-	
 		
 		
 		
