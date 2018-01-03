@@ -1,33 +1,28 @@
-import java.sql.Array;
+//Evan Wu TBA Project
 import java.util.Scanner;
-
-
 
 public class Runner {
 	
 
 	private static boolean gameOn = true;
-	private static int size;
-	
-	
-
 
 	public static void main(String[] args)
 	{
 		
 		System.out.println("Welcome to Escape Room: Apartment Edition. In this game you will explore random rooms."
-				+ "\nThe objective of this game is to find the correct rooms to find the keys to escape or it's game over!");
-		System.out.println("To begin, choose your board size.(Press any key to advance to choose menu)");
-		Scanner g = new Scanner (System.in);
-		String statement = g.nextLine();
+				+ "\nThe objective of this game is to find the correct rooms and play games to collect the keys to escape or it's game over!");
+		System.out.println("To begin, choose your board size.");
+		System.out.println("\n");
 		Room [][] building = chooseBoard();
+		System.out.println("Good luck!");
+		System.out.println("\n");
 			
 		//Fill the building with normal rooms
 		for (int x = 0; x < building.length; x++)
 		{
 			for (int y = 0; y < building[x].length; y++)
 			{
-				building[x][y] = new  Room(x,y, y);
+				building[x][y] = new  Room(x,y);
 			}
 		}
 		
@@ -35,30 +30,29 @@ public class Runner {
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x, y, y);
+		building[x][y] = new WinningRoom(x, y);
 		
 		//game over room
 		int x1 = (int)(Math.random()*building.length);
 		int y1 = (int)(Math.random()*building.length);
-		building[x1][y1] = new GameOver(x1, y1, y1);
+		building[x1][y1] = new GameOver(x1, y1);
 		
 		int x2 = (int)(Math.random()*building.length);
 		int y2 = (int)(Math.random()*building.length);
-		building[x2][y2] = new Hallway(x2, y2, y2);
-		building[x2][y2] = new Hallway(x2, y2, y2);
+		building[x2][y2] = new Hallway(x2, y2);
 		
 	
 		int x3 = (int)(Math.random()*building.length);
 		int y3 = (int)(Math.random()*building.length);
-		building[x3][y3] = new Riddle(x3, y3, y3);
+		building[x3][y3] = new Riddle(x3, y3);
 		
 		int x4 = (int)(Math.random()*building.length);
 		int y4 = (int)(Math.random()*building.length);
-		building[x4][y4] = new DarkRoom(x4, y4, y4);
+		building[x4][y4] = new DarkRoom(x4, y4);
 		
 		int x5 = (int)(Math.random()*building.length);
 		int y5 = (int)(Math.random()*building.length);
-		building[1][1] = new GuessingGame(x5, y5, y5);
+		building[1][1] = new GuessingGame(x5, y5);
 		
 		
 	
@@ -75,7 +69,7 @@ public class Runner {
 		
 			if(validMove(move, player1, building))
 			{
-				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc() + " keys =" + player1.getKeys());
+				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc() + " keys = " + player1.getKeys());
 				map.printBoard();
 			}
 			else {

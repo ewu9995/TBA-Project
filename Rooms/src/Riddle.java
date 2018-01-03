@@ -7,8 +7,8 @@ public class Riddle extends Room {
 private String statement;	
 
 	
-	public Riddle(int x, int y, int keys) {
-		super(x, y, keys);
+	public Riddle(int x, int y) {
+		super(x, y);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -18,7 +18,6 @@ private String statement;
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		x.setKeys(this.keys);
 		System.out.println("You've found a riddle room...");
 		System.out.println("A text reads: Solve this riddle for a key or start over again:");
 		System.out.println("I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost everybody.");
@@ -36,7 +35,7 @@ private String statement;
 			if (findKeyword(statement, "Pencil Lead", 0) >= 0)
 		{
 				System.out.println("Correct!");
-			keys++;
+			keys+=1;
 			key=true;
 		}
 			else

@@ -2,8 +2,8 @@ import java.util.Scanner;
 public class DarkRoom extends Room {
 
 	private boolean explored = false;
-	public DarkRoom(int x, int y, int keys) {
-		super(x,y, keys);
+	public DarkRoom(int x, int y) {
+		super(x,y);
 	}
 	
 	public void enterRoom(Person x) {
@@ -11,15 +11,16 @@ public class DarkRoom extends Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		x.setKeys(this.keys);
 		System.out.println("You've found this dark room...");
 		System.out.println("Would you like to open it?");
 		getResponse();
+		if(key) {
+			keys = x.getKeys() +1;
+		}
 	}
 	
 	
 	Scanner input = new Scanner(System.in);
-	private int keys;
 	private boolean key;
 	
 	
@@ -32,8 +33,8 @@ public class DarkRoom extends Room {
 			{
 				response = "The door suddenly locks behind you... You feel your way around the dark room... You find a sharp object -- it's a key!" ;
 	           boolean key = true;
-	           keys++;
 	           key = true;
+	           
 			}
 		 else if (findKeyword(statement, "No", 0) >= 0)
 			{
@@ -96,7 +97,7 @@ public class DarkRoom extends Room {
 	
 	public void leaveRoom(Person p) {
 		if (key) {
-			DarkRoom x = new DarkRoom(xLoc, xLoc, keys);
+			DarkRoom x = new DarkRoom(xLoc, xLoc);
 			x.leaveRoom(p);
 			System.out.println("You have successfully obtained a key!");
 		}

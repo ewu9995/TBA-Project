@@ -4,8 +4,8 @@ public class GuessingGame extends Room {
 	public boolean key = false;
 	private boolean explored = false;	
 	
-	public GuessingGame(int x, int y, int keys) {
-		super(x,y, keys);
+	public GuessingGame(int x, int y) {
+		super(x,y);
 	}
 	
 	public void enterRoom(Person x)
@@ -42,7 +42,7 @@ public class GuessingGame extends Room {
 
 	                        System.out.println("Correct!");
 	                        key = true;
-	                        keys++;
+	                        keys+=1;
 	                  }
 
 	                  else if (guess < number) {
@@ -59,7 +59,7 @@ public class GuessingGame extends Room {
 	
 	public void leaveRoom(Person p) {
 		if (key == true) {
-			GuessingGame x = new GuessingGame(xLoc, xLoc, keys);
+			GuessingGame x = new GuessingGame(xLoc, xLoc);
 			x.leaveRoom(p);
 			System.out.println("You have successfully obtained a key!");
 		}

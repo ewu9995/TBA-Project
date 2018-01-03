@@ -5,7 +5,7 @@ public class Room {
 	boolean key;
 	private boolean explored = false;
 	
-	public Room(int x, int y, int keys)
+	public Room(int x, int y)
 	{
 		xLoc = x;
 		yLoc = y;
