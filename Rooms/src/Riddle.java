@@ -26,6 +26,7 @@ private String statement;
 	
 
 		private boolean explored = false;
+		private Person x1;
 		
 		public void getResponse()
 		{
@@ -35,7 +36,9 @@ private String statement;
 			if (findKeyword(statement, "Pencil Lead", 0) >= 0)
 		{
 				System.out.println("Correct!");
-			keys+=1;
+				occupant = x1;
+			int keys =1;
+			x1.setKeys(keys);
 			key=true;
 		}
 			else
