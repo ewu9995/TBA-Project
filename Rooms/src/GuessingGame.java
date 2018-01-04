@@ -31,7 +31,7 @@ public class GuessingGame extends Room {
                   if (guess == number) {
                 		System.out.println("Correct!");
     					int keys = 1;
-                		x.keyTotal(keys);
+                		x.keyTotal(x.getKeys()+1);
                 		boolean key = true;
                 		guess1 = false;
     					

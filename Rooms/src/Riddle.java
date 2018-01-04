@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 public class Riddle extends Room {
 
-
+private boolean riddle = true;
+private boolean explored = false;
+private Person x1;
 	
 	public Riddle(int x, int y) {
 		super(x, y);
@@ -18,37 +20,31 @@ public class Riddle extends Room {
 		System.out.println("You've found a riddle room...");
 		System.out.println("A text reads: Solve this riddle for a key or start over again:");
 		System.out.println("I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost everybody.");
-		getResponse();
-	}
-	
-
-		private boolean explored = false;
-		private Person x1;
-		
-		public void getResponse()
-		{
+		while(riddle) {
 			Scanner in = new Scanner(System.in);
 			String statement = in.nextLine();
 			
-			if (findKeyword(statement, "Pencil Lead", 0) >= 0)
-		{
+			do { 
+				if (findKeyword(statement, "Pencil Lead", 0) >= 0)
+			{
 				System.out.println("Correct!");
-				occupant = x1;
-			int keys =1;
-			x1.setKeys(x1.getKeys()+ keys);
-			key=true;
+				occupant = x;
+				int keys = 1;
+        		x.keyTotal(x.getKeys()+1);
+        		boolean key = true;
+        		riddle =false;
+        		
 		}
 			else
-				 System.out.println( "\"   _____          __  __ ______    ______      ________ _____  \\r\\n\" + \r\n" + 
-						"					\"  / ____|   /\\\\   |  \\\\/  |  ____|  / __ \\\\ \\\\    / /  ____|  __ \\\\ \\r\\n\" + \r\n" + 
-						"					\" | |  __   /  \\\\  | \\\\  / | |__    | |  | \\\\ \\\\  / /| |__  | |__) |\\r\\n\" + \r\n" + 
-						"					\" | | |_ | / /\\\\ \\\\ | |\\\\/| |  __|   | |  | |\\\\ \\\\/ / |  __| |  _  / \\r\\n\" + \r\n" + 
-						"					\" | |__| |/ ____ \\\\| |  | | |____  | |__| | \\\\  /  | |____| | \\\\ \\\\ \\r\\n\" + \r\n" + 
-						"					\"  \\\\_____/_/    \\\\_\\\\_|  |_|______|  \\\\____/   \\\\/   |______|_|  \\\\_\\\\\"");
-				System.out.println(" Looks like you've failed! Start over again!");
-				Runner.gameOff();	
+				 System.out.println("Try again!");
+				
+					
+		} while(riddle);
+		}
 		}
 	
+	
+
 	
 	private int findKeyword(String statement, String goal,
 			int startPos)
@@ -99,10 +95,14 @@ public class Riddle extends Room {
 	}
 	
 	public void leaveRoom(Person p) {
-		if(key) {
-			leaveRoom(p);
+		if (key == true) {
+			Riddle x = new Riddle(xLoc, xLoc);
+			x.leaveRoom(p);
+			System.out.println("You have successfully obtained a key!");
 		}
-		
+		else {
+			Runner.gameOff();
+		}
 	}
 
 	

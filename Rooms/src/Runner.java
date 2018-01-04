@@ -44,11 +44,11 @@ public class Runner {
 	
 		int x3 = (int)(Math.random()*building.length);
 		int y3 = (int)(Math.random()*building.length);
-		building[x3][y3] = new Riddle(x3, y3);
+		building[2][0] = new Riddle(x3, y3);
 		
 		int x4 = (int)(Math.random()*building.length);
 		int y4 = (int)(Math.random()*building.length);
-		building[x4][y4] = new DarkRoom(x4, y4);
+		building[0][1] = new DarkRoom(x4, y4);
 		
 		int x5 = (int)(Math.random()*building.length);
 		int y5 = (int)(Math.random()*building.length);
@@ -90,12 +90,12 @@ public class Runner {
 		String statement1 = x.nextLine();
 		if (findKeyword(statement1, "large", 0) >= 0)
 		{
-			  Room[][] building = new Room[18][18];
+			  Room[][] building = new Room[10][10];
 			  return building;
 		}
 		if (findKeyword(statement1, "medium", 0) >= 0)
 		{
-			Room[][] building = new Room[12][12];
+			Room[][] building = new Room[8][8];
 			return building;
 		}
 		if (findKeyword(statement1, "small", 0) >= 0)

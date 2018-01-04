@@ -45,7 +45,7 @@ public class Person {
 	
 	public void keyTotal(int keys)
 	{
-		this.keys= this.keys + keys;
+		this.keys = this.keys + keys;
 	}
 
 	public void leaveRoom() {

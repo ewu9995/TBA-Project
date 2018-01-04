@@ -2,6 +2,12 @@ import java.util.Scanner;
 public class DarkRoom extends Room {
 
 	private boolean explored = false;
+	private boolean darkroom = true;
+	
+	Scanner input = new Scanner(System.in);
+	private boolean key;
+	private Person x1;
+	
 	public DarkRoom(int x, int y) {
 		super(x,y);
 	}
@@ -13,40 +19,36 @@ public class DarkRoom extends Room {
 		x.setyLoc(this.yLoc);
 		System.out.println("You've found this dark room...");
 		System.out.println("Would you like to open it?");
-		getResponse();
-		if(key) {
-			keys = x.getKeys() +1;
+		while(darkroom)
+		{		
+			Scanner in = new Scanner (System.in);
+			String statement = in.nextLine();
+			 do{
+				 if (findKeyword(statement, "Yes", 0) >= 0)
+			 
+				{
+					System.out.println( "The door suddenly locks behind you... You feel your way around the dark room... You find a sharp object -- it's a key!") ;
+					int keys = 1;
+	        		x.keyTotal(x.getKeys() +1);
+	        		boolean key = true;
+	        		darkroom = false;
+		           
+				}
+			 else if (findKeyword(statement, "No", 0) >= 0)
+				{
+					System.out.println("Are you sure?");
+					DarkRoom x3 = new DarkRoom(xLoc, xLoc);
+					x3.leaveRoom(x);
+					darkroom = false;
+				}
+			 } while (darkroom);
+			}
 		}
-	}
-	
-	
-	Scanner input = new Scanner(System.in);
-	private boolean key;
-	private Person x1;
-	
-	
-	public void getResponse() 
-	{
-		Scanner in = new Scanner (System.in);
-		String statement = in.nextLine();
-		String response = "";
-		 if (findKeyword(statement, "Yes", 0) >= 0)
-			{
-				response = "The door suddenly locks behind you... You feel your way around the dark room... You find a sharp object -- it's a key!" ;
-				occupant = x1;
-				int keys = 1;
-				x1.setKeys(x1.getKeys() + keys);
-	           key = true;
-	           
-			}
-		 else if (findKeyword(statement, "No", 0) >= 0)
-			{
-				System.out.println("You died.");
-				Runner.gameOff();
-			}
-			
 
-	}
+
+				
+	
+	
 	
 	private int findKeyword(String statement, String goal,
 			int startPos)
