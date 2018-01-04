@@ -3,9 +3,6 @@ import java.util.Scanner;
 public class Riddle extends Room {
 
 
-
-private String statement;	
-
 	
 	public Riddle(int x, int y) {
 		super(x, y);
@@ -38,7 +35,7 @@ private String statement;
 				System.out.println("Correct!");
 				occupant = x1;
 			int keys =1;
-			x1.setKeys(keys);
+			x1.setKeys(x1.getKeys()+ keys);
 			key=true;
 		}
 			else

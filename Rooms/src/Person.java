@@ -43,4 +43,14 @@ public class Person {
 		this.keys = keys;
 	}
 	
+	public void keyTotal(int keys)
+	{
+		this.keys= this.keys + keys;
+	}
+
+	public void leaveRoom() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class GuessingGame extends Room {
 	public boolean key = false;
 	private boolean explored = false;
-	private Person x1;	
+	private boolean guess1 = true;
 	
 	public GuessingGame(int x, int y) {
 		super(x,y);
@@ -20,33 +20,35 @@ public class GuessingGame extends Room {
 		System.out.println("You think to yourself: Math!?!!!");
 		System.out.println("You look around for clues on how to escape....");
 		System.out.println("You find a machine that reads: Solve this number guesssing game for a key.");
-		guessingGame();
+		while (guess1) {
+			int number;
+            number = (int) (Math.random() * 10 + 1);           
+            Scanner a = new Scanner(System.in);
+            int guess;
+            do {
+                  System.out.print("Enter a number from 1-1000 ");
+                  guess = a.nextInt();
+                  if (guess == number) {
+                		System.out.println("Correct!");
+    					int keys = 1;
+                		x.keyTotal(keys);
+                		boolean key = true;
+                		guess1 = false;
+    					
+                  }
+                  else if (guess < number) {
+                        System.out.println("Guess is larger.");}
+                  else if (guess > number) {
+                        System.out.println("Guess is smaller.");}
+            } while (guess != number);
+      }
+		
 	}
-	
-	public void guessingGame() {
-	            int number;
-	            number = (int) (Math.random() * 999 + 1);           
-	            Scanner x = new Scanner(System.in);
-	            int guess;
-	            do {
-	                  System.out.print("Enter a number from 1-1000 ");
-	                  guess = x.nextInt();
-	                  if (guess == number) {
 
-	                		System.out.println("Correct!");
-	        				occupant = x1;
-	        				x1.setKeys(x1.getKeys()+1);
-	        				key=true;
-	                  }
-	                  else if (guess < number) {
-	                        System.out.println("Guess is larger.");}
-	                  else if (guess > number) {
-	                        System.out.println("Guess is smaller.");}
-	            } while (guess != number);
-	      }
 	
+
 	public void leaveRoom(Person p) {
-		if (key = true) {
+		if (key == true) {
 			GuessingGame x = new GuessingGame(xLoc, xLoc);
 			x.leaveRoom(p);
 			System.out.println("You have successfully obtained a key!");
@@ -54,9 +56,8 @@ public class GuessingGame extends Room {
 		else {
 			Runner.gameOff();
 		}
-		
-		
 	}
+	
 	public void print()
 	{
 		if(explored == false && occupant == null)

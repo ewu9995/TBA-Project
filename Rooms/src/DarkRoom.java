@@ -22,6 +22,7 @@ public class DarkRoom extends Room {
 	
 	Scanner input = new Scanner(System.in);
 	private boolean key;
+	private Person x1;
 	
 	
 	public void getResponse() 
@@ -32,13 +33,15 @@ public class DarkRoom extends Room {
 		 if (findKeyword(statement, "Yes", 0) >= 0)
 			{
 				response = "The door suddenly locks behind you... You feel your way around the dark room... You find a sharp object -- it's a key!" ;
-	           boolean key = true;
+				occupant = x1;
+				int keys = 1;
+				x1.setKeys(x1.getKeys() + keys);
 	           key = true;
 	           
 			}
 		 else if (findKeyword(statement, "No", 0) >= 0)
 			{
-				response = "You died.";
+				System.out.println("You died.");
 				Runner.gameOff();
 			}
 			
