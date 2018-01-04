@@ -23,8 +23,7 @@ private boolean winning = true;
 		System.out.println("You have the needed amount of keys to open the door with: " + x.getKeys());
 		System.out.println("You open the door");
 		System.out.println("You see the light of day.");
-		System.out.println("Congratulations! You have escaped! ＼(＾O＾)／\n" + 
-				"");
+		System.out.println("Congratulations! You have escaped! ヽ(´ー｀)ノ");
 		Runner.gameOff();
 		winning = false;
 		}

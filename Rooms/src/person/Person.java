@@ -42,7 +42,7 @@ public class Person {
 	}
 
 	public void print() {
-		System.out.print("O"); //user will appear as [O] and add places they've been to will also appear as [O]
+		System.out.print("O"); //user will appear as [O] on the board and places they've been to will also appear as [O]
 		
 	}
 	

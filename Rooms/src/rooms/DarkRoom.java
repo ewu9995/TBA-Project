@@ -11,8 +11,7 @@ public class DarkRoom extends Room {
 	private boolean darkroom = true;
 	
 	Scanner input = new Scanner(System.in);
-	private boolean key;
-	private Person x1;
+
 	
 	public DarkRoom(int x, int y) {
 		super(x,y);
@@ -36,7 +35,6 @@ public class DarkRoom extends Room {
 					System.out.println( "The door suddenly locks behind you... You feel your way around this dark room... You find a sharp object -- it's a key!") ;
 	        		x.getKeys(); //adds keys
 	        		x.keyTotal(); 
-	        		boolean key = true;
 	        		darkroom = false;
 		           
 				}
@@ -100,20 +98,7 @@ public class DarkRoom extends Room {
 		return -1;
 	}
 	
-	
-	//user can only levae room if they have a key
-	public void leaveRoom(Person p) {
-		if (key) {
-			DarkRoom x = new DarkRoom(xLoc, xLoc);
-			x.leaveRoom(p);
-			System.out.println("You have successfully obtained a key!");
-		}
-		else {
-			Runner.gameOff();
-		}
-		
-	}
-	
+
 	
 	public void print()
 	{

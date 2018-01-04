@@ -10,7 +10,7 @@ public class Riddle extends Room {
 
 private boolean riddle = true;
 private boolean explored = false;
-private Person x1;
+
 	
 	public Riddle(int x, int y) {
 		super(x, y);
@@ -47,7 +47,6 @@ private Person x1;
 				occupant = x;
         		x.keyTotal();
         		x.getKeys();
-        		boolean key = true;
         		riddle = false;
 				}
 			else {
@@ -69,7 +68,6 @@ private Person x1;
 				occupant = x;
 				x.keyTotal();
         		x.getKeys();
-        		boolean key = true;
         		riddle = false;
 					}
 				}
@@ -143,18 +141,6 @@ private Person x1;
 		return -1;
 	}
 	
-	//user can only leave if they have a key
-	public void leaveRoom(Person p) {
-		if (key == true) {
-			Riddle x = new Riddle(xLoc, xLoc);
-			x.leaveRoom(p);
-			System.out.println("You have successfully obtained a key!");
-		}
-		else {
-			Runner.gameOff();
-		}
-	}
-
 	
 	public void print()
 	{

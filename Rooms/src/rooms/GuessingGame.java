@@ -2,11 +2,9 @@ package rooms;
 import java.util.Scanner;
 
 import person.Person;
-import runner.Runner;
 
 //Evan Wu TBA project
 public class GuessingGame extends Room {
-	public boolean key = false;
 	private boolean explored = false;
 	private boolean guess1 = true;
 	
@@ -37,7 +35,6 @@ public class GuessingGame extends Room {
                 		System.out.println("Correct!");
                 		x.keyTotal(); //adds keys
                 		x.getKeys();
-                		boolean key = true;
                 		guess1 = false;
     					
                   }
@@ -51,18 +48,7 @@ public class GuessingGame extends Room {
 	}
 
 	
-	//user can only leave if they have a key
-	public void leaveRoom(Person p) {
-		if (key == true) {
-			GuessingGame x = new GuessingGame(xLoc, xLoc);
-			x.leaveRoom(p);
-			System.out.println("You have successfully obtained a key!");
-		}
-		else {
-			Runner.gameOff();
-		}
-	}
-	
+
 	public void print()
 	{
 		if(explored == false && occupant == null)
