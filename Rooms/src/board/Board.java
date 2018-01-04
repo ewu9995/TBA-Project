@@ -1,6 +1,7 @@
 package board;
 import rooms.Room;
 
+//Evan Wu TBA Project
 public class Board {
 	private static Room [][] rooms;
 	
@@ -14,7 +15,7 @@ public class Board {
 		 	Board.rooms=new Room[size][size];
 	}
 	
-	
+	//taken from class notes
 	public void printBoard() {
 		for (Room[]i : rooms) {
 			for(Room x : i) {

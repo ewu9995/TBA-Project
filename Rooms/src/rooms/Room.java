@@ -1,6 +1,7 @@
 package rooms;
 import person.Person;
 
+//Evan Wu TBA Project
 public class Room {
 	Person occupant;
 	int xLoc,yLoc;
@@ -24,6 +25,8 @@ public class Room {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	//prints out the room (taken from class discussion)
 	public void print()
 	{
 		if(explored == false && occupant == null)

@@ -2,6 +2,7 @@ package rooms;
 import person.Person;
 import runner.Runner;
 
+//Evan Wu TBA Project
 public class WinningRoom extends Room {
 
 private boolean winning = true;
@@ -16,7 +17,7 @@ private boolean winning = true;
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		boolean i = (x.getKeys() >= 3);
+		boolean i = (x.getKeys() >= 3); //three keys needed to escape; couldnt convert int to boolean so created a new boolean 
 		while (winning) {
 		if(i) {
 		System.out.println("You have the needed amount of keys to open the door with: " + x.getKeys());
@@ -26,7 +27,8 @@ private boolean winning = true;
 				"");
 		Runner.gameOff();
 		winning = false;
-	}
+		}
+		//error message if user does not have enough keys
 		else {
 			System.out.println("You don't have enough keys, try again! (3 or more!)");
 			Room r = new Room(keys, keys);

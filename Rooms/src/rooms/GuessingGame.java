@@ -25,6 +25,7 @@ public class GuessingGame extends Room {
 		System.out.println("You look around for clues on how to escape....");
 		System.out.println("You find a machine that reads: Solve this number guesssing game for a key.");
 		while (guess1) {
+			//math number guessing game
 			int number;
             number = (int) (Math.random() * 99 + 1);           
             Scanner a = new Scanner(System.in);
@@ -34,8 +35,7 @@ public class GuessingGame extends Room {
                   guess = a.nextInt();
                   if (guess == number) {
                 		System.out.println("Correct!");
-    					int keys = 1;
-                		x.keyTotal();
+                		x.keyTotal(); //adds keys
                 		x.getKeys();
                 		boolean key = true;
                 		guess1 = false;
@@ -51,7 +51,7 @@ public class GuessingGame extends Room {
 	}
 
 	
-
+	//user can only leave if they have a key
 	public void leaveRoom(Person p) {
 		if (key == true) {
 			GuessingGame x = new GuessingGame(xLoc, xLoc);

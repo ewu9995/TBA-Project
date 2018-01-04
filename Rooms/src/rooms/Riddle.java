@@ -5,6 +5,7 @@ import java.util.Scanner;
 import person.Person;
 import runner.Runner;
 
+//Evan Wu TBA Project
 public class Riddle extends Room {
 
 private boolean riddle = true;
@@ -31,6 +32,7 @@ private Person x1;
 			String statement = in.nextLine();
 			
 			do { 
+				//correct answers
 				if (findKeyword(statement, "Pencil Lead",0) >=0 
 						|| findKeyword(statement, "A Watermelon", 0) >= 0 
 						|| findKeyword(statement, "A cloud",0) >=0 
@@ -43,13 +45,13 @@ private Person x1;
 				{
 				System.out.println("Correct!");
 				occupant = x;
-				int keys = 1;
         		x.keyTotal();
         		x.getKeys();
         		boolean key = true;
         		riddle = false;
 				}
 			else {
+				//correct answers
 				System.out.println("Try again!(Another riddle this time)");
 				System.out.println(getRandomRiddle());
 				String statement1 = in.nextLine();
@@ -65,7 +67,6 @@ private Person x1;
 				{
 				System.out.println("Correct!");
 				occupant = x;
-				int keys = 1;
 				x.keyTotal();
         		x.getKeys();
         		boolean key = true;
@@ -84,6 +85,8 @@ private Person x1;
 		}
 	
 	}
+	
+	//random riddles taken from a website
 	private String [] riddles = {"I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost everybody.",
 									"You go at red and stop at green. What am I?", "What is easy to spot but hard to find?",
 									"I fly without wings and cry without eyes. What am I?", "What can you serve but not eat?",
@@ -140,6 +143,7 @@ private Person x1;
 		return -1;
 	}
 	
+	//user can only leave if they have a key
 	public void leaveRoom(Person p) {
 		if (key == true) {
 			Riddle x = new Riddle(xLoc, xLoc);

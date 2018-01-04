@@ -1,7 +1,9 @@
 package person;
+
+//Evan Wu TBA Project
 public class Person {
-	String firstName;
-	String familyName;
+	
+	String name;
 	int xLoc, yLoc;
 	public int keys = 0;
 	
@@ -21,18 +23,26 @@ public class Person {
 		this.yLoc = yLoc;
 	}
 
-	public Person (String firstName, String familyName, int xLoc, int yLoc, int keys)
+	public Person (String name, int yLoc, int keys, int xLoc)
 	{
-		this.firstName = firstName;
-		this.familyName = familyName;
+
 		this.xLoc = xLoc;
 		this.yLoc = yLoc;
 		this.keys = keys;
+		this.name = name;
 	}
 
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public void print() {
-		System.out.print("O");
+		System.out.print("O"); //user will appear as [O] and add places they've been to will also appear as [O]
 		
 	}
 	

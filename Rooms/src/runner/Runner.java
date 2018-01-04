@@ -1,4 +1,5 @@
 package runner;
+
 //Evan Wu TBA Project
 import java.util.Scanner;
 
@@ -7,7 +8,6 @@ import person.Person;
 import rooms.DarkRoom;
 import rooms.GameOver;
 import rooms.GuessingGame;
-import rooms.Hallway;
 import rooms.Riddle;
 import rooms.Room;
 import rooms.WinningRoom;
@@ -17,16 +17,24 @@ public class Runner {
 
 	private static boolean gameOn = true;
 
+
 	public static void main(String[] args)
 	{
 		
-		System.out.println("Welcome to Escape Room: Apartment Edition. In this game you will explore random rooms."
-				+ "\nThe objective of this game is to find the correct rooms and play games to collect the keys to escape or it's game over!");
-		System.out.println("To begin, choose your board size.");
+		//Intro to the game
+		System.out.println("Welcome to Escape Room: Apartment Edition. In this game you will explore random rooms in an apartment."
+				+ "\nThe objective of this game is to find the correct rooms and solve puzzles to collect the keys to escape and to avoid the game over room!");
+		System.out.println("But first, what's your name?");
+		//Gets user's name
+		Scanner k = new Scanner(System.in);
+		String name = k.nextLine();
+		System.out.println("Hello " + name + "," +" to begin, choose your room size.");
 		System.out.println("\n");
+		//choose board
 		Room [][] building = chooseBoard();
-		System.out.println("Tip: Rooms will teleport you... So watch out for the Game Over room!!");
+		System.out.println("Tip: Rooms will teleport you... and watch out for the Game Over room!!");
 		System.out.println("\n");
+		System.out.println("Good luck!");
 			
 		//Fill the building with normal rooms
 		for (int x = 0; x < building.length; x++)
@@ -43,34 +51,31 @@ public class Runner {
 		int y = (int)(Math.random()*building.length);
 		building[0][1] = new WinningRoom(x, y);
 		
-		//game over room
-		int x1 = (int)(Math.random()*building.length);
-		int y1 = (int)(Math.random()*building.length);
-		building[x1][y1] = new GameOver(x1, y1);
-		
+		//Create a game over room
 		int x2 = (int)(Math.random()*building.length);
 		int y2 = (int)(Math.random()*building.length);
-		building[x2][y2] = new Hallway(x2, y2);
+		building[x2][y2] = new GameOver(x2, y2);
 		
-	
+		//Create a riddle room
 		int x3 = (int)(Math.random()*building.length);
 		int y3 = (int)(Math.random()*building.length);
 		building[x3][y3] = new Riddle(x3, y3);
 		
+		//Create a dark mysterious room
 		int x4 = (int)(Math.random()*building.length);
 		int y4 = (int)(Math.random()*building.length);
 		building[x4][x4] = new DarkRoom(x4, y4);
 		
+		//Create a room where user will guess numbers
 		int x5 = (int)(Math.random()*building.length);
 		int y5 = (int)(Math.random()*building.length);
 		building[x5][y5] = new GuessingGame(x5, y5);
 		
-		
-	
+			
 		Board map = new Board(building);
 	
 		 //Setup player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0,0, 0);
+		Person player1 = new Person("Name", 0,0, 0);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
@@ -93,23 +98,23 @@ public class Runner {
 	}
 	
 
-	
+	//choose board method
 	public static Room[][] chooseBoard(){
 	
 		System.out.println("What size would you want your room to be? Large, medium, or small?(Please enter the choice word as it as)");
 		Scanner x = new Scanner (System.in);
 		String statement1 = x.nextLine();
-		if (findKeyword(statement1, "large", 0) >= 0)
+		if (findKeyword(statement1, "large", 0) >= 0)//will create a large board
 		{
-			  Room[][] building = new Room[8][8];
+			  Room[][] building = new Room[7][7];
 			  return building;
 		}
-		if (findKeyword(statement1, "medium", 0) >= 0)
+		if (findKeyword(statement1, "medium", 0) >= 0)//creates a medium board
 		{
 			Room[][] building = new Room[6][6];
 			return building;
 		}
-		if (findKeyword(statement1, "small", 0) >= 0)
+		if (findKeyword(statement1, "small", 0) >= 0)//creates a small board
 		{
 			Room[][] building = new Room[4][4];
 			return building;
@@ -118,6 +123,8 @@ public class Runner {
 		
 		
 	}
+	
+	//findKeyword method from chatbot is used to receive user input in choose board selection
 	private static int findKeyword(String statement, String goal,
 			int startPos)
 	{
@@ -166,7 +173,7 @@ public class Runner {
 		return -1;
 	}
 	
-	
+	//valid moves 
 	public static boolean validMove(String move, Person p, Room[][] map)
 	{
 		move = move.toLowerCase().trim();
