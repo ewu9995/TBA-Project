@@ -39,12 +39,13 @@ private Person x1;
 				System.out.println("Correct!");
 				occupant = x;
 				int keys = 1;
-        		x.keyTotal(x.getKeys()+1);
+        		x.keyTotal();
+        		x.getKeys();
         		boolean key = true;
         		riddle = false;
 				}
 			else {
-				System.out.println("Try again!");
+				System.out.println("Try again!(Another riddle this time)");
 				System.out.println(getRandomRiddle());
 				String statement1 = in.nextLine();
 				if (findKeyword(statement1, "Pencil Lead",0) >=0 
@@ -60,11 +61,13 @@ private Person x1;
 				System.out.println("Correct!");
 				occupant = x;
 				int keys = 1;
-        		x.keyTotal(x.getKeys()+1);
+				x.keyTotal();
+        		x.getKeys();
         		boolean key = true;
         		riddle = false;
-					
-		}}} while(riddle);
+					}
+				}
+				} while(riddle);
 		}
 		}
 	

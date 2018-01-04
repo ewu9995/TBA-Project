@@ -29,14 +29,15 @@ public class DarkRoom extends Room {
 				{
 					System.out.println( "The door suddenly locks behind you... You feel your way around the dark room... You find a sharp object -- it's a key!") ;
 					int keys = 1;
-	        		x.keyTotal(x.getKeys() +1);
+	        		x.getKeys();
+	        		x.keyTotal();
 	        		boolean key = true;
 	        		darkroom = false;
 		           
 				}
 			 else if (findKeyword(statement, "No", 0) >= 0)
 				{
-					System.out.println("Are you sure?");
+					System.out.println("You leave the room.");
 					DarkRoom x3 = new DarkRoom(xLoc, xLoc);
 					x3.leaveRoom(x);
 					darkroom = false;
@@ -44,10 +45,6 @@ public class DarkRoom extends Room {
 			 } while(darkroom);
 			}
 		}
-
-
-				
-	
 	
 	
 	private int findKeyword(String statement, String goal,

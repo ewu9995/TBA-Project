@@ -2,7 +2,7 @@ public class Person {
 	String firstName;
 	String familyName;
 	int xLoc, yLoc;
-	int keys;
+	public int keys = 0;
 	
 	public int getxLoc() {
 		return xLoc;
@@ -39,13 +39,10 @@ public class Person {
 		return keys;
 	}
 	
-	public void setKeys(int keys) {
-		this.keys = keys;
-	}
 	
-	public void keyTotal(int keys)
+	public void keyTotal()
 	{
-		this.keys = this.keys + keys;
+		this.keys = this.keys + 1;
 	}
 
 	public void leaveRoom() {

@@ -15,23 +15,23 @@ public class GuessingGame extends Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		x.setKeys(this.keys);
 		System.out.println("You've found a room filled with numbers...");
 		System.out.println("You think to yourself: Math!?!!!");
 		System.out.println("You look around for clues on how to escape....");
 		System.out.println("You find a machine that reads: Solve this number guesssing game for a key.");
 		while (guess1) {
 			int number;
-            number = (int) (Math.random() * 10 + 1);           
+            number = (int) (Math.random() * 99 + 1);           
             Scanner a = new Scanner(System.in);
             int guess;
             do {
-                  System.out.print("Enter a number from 1-1000 ");
+                  System.out.print("Enter a number from 1-100 ");
                   guess = a.nextInt();
                   if (guess == number) {
                 		System.out.println("Correct!");
     					int keys = 1;
-                		x.keyTotal(x.getKeys()+1);
+                		x.keyTotal();
+                		x.getKeys();
                 		boolean key = true;
                 		guess1 = false;
     					

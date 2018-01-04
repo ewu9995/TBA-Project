@@ -6,7 +6,7 @@ public class Hallway extends Room{
 	}
 	public void enterRoom(Person x)
 	{
-		System.out.println("You are moving around the hallway.");
+		System.out.println("You are moving around this hallway...");
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);

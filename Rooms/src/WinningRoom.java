@@ -12,18 +12,21 @@ private boolean winning = true;
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		boolean i = (x.getKeys() >= 2);
+		boolean i = (x.getKeys() >= 3);
 		while (winning) {
 		if(i) {
 		System.out.println("You open the door");
 		System.out.println("You see the light of day.");
-		System.out.println("Congratulations! You have escaped!");
+		System.out.println("Congratulations! You have escaped! ＼(＾O＾)／\n" + 
+				"");
 		Runner.gameOff();
+		winning = false;
 	}
 		else {
 			System.out.println("You don't have enough keys, try again!");
 			Room r = new Room(keys, keys);
 			r.enterRoom(x);
+			winning = false;
 		}
 			
 	}

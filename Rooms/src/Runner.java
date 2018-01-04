@@ -14,7 +14,7 @@ public class Runner {
 		System.out.println("To begin, choose your board size.");
 		System.out.println("\n");
 		Room [][] building = chooseBoard();
-		System.out.println("Good luck!");
+		System.out.println("Tip: Rooms will teleport you... So watch out for the Game Over room!!");
 		System.out.println("\n");
 			
 		//Fill the building with normal rooms
@@ -30,7 +30,7 @@ public class Runner {
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x, y);
+		building[0][1] = new WinningRoom(x, y);
 		
 		//game over room
 		int x1 = (int)(Math.random()*building.length);
@@ -44,15 +44,15 @@ public class Runner {
 	
 		int x3 = (int)(Math.random()*building.length);
 		int y3 = (int)(Math.random()*building.length);
-		building[2][0] = new Riddle(x3, y3);
+		building[x3][y3] = new Riddle(x3, y3);
 		
 		int x4 = (int)(Math.random()*building.length);
 		int y4 = (int)(Math.random()*building.length);
-		building[0][1] = new DarkRoom(x4, y4);
+		building[x4][x4] = new DarkRoom(x4, y4);
 		
 		int x5 = (int)(Math.random()*building.length);
 		int y5 = (int)(Math.random()*building.length);
-		building[1][1] = new GuessingGame(x5, y5);
+		building[x5][y5] = new GuessingGame(x5, y5);
 		
 		
 	
@@ -90,17 +90,17 @@ public class Runner {
 		String statement1 = x.nextLine();
 		if (findKeyword(statement1, "large", 0) >= 0)
 		{
-			  Room[][] building = new Room[10][10];
+			  Room[][] building = new Room[8][8];
 			  return building;
 		}
 		if (findKeyword(statement1, "medium", 0) >= 0)
 		{
-			Room[][] building = new Room[8][8];
+			Room[][] building = new Room[6][6];
 			return building;
 		}
 		if (findKeyword(statement1, "small", 0) >= 0)
 		{
-			Room[][] building = new Room[6][6];
+			Room[][] building = new Room[4][4];
 			return building;
 		}
 		return null;	
