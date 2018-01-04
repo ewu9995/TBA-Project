@@ -6,10 +6,12 @@ import java.util.Scanner;
 import board.Board;
 import person.Person;
 import rooms.DarkRoom;
+import rooms.EmptyRoom;
 import rooms.GameOver;
 import rooms.GuessingGame;
 import rooms.Riddle;
 import rooms.Room;
+import rooms.StaffRoom;
 import rooms.WinningRoom;
 
 public class Runner {
@@ -51,6 +53,11 @@ public class Runner {
 		int y = (int)(Math.random()*building.length);
 		building[0][1] = new WinningRoom(x, y);
 		
+		//Create a empty room
+		int x1 = (int)(Math.random()*building.length);
+		int y1 = (int)(Math.random()*building.length);
+		building[x1][y1] = new EmptyRoom(x1, y1);
+		
 		//Create a game over room
 		int x2 = (int)(Math.random()*building.length);
 		int y2 = (int)(Math.random()*building.length);
@@ -70,6 +77,11 @@ public class Runner {
 		int x5 = (int)(Math.random()*building.length);
 		int y5 = (int)(Math.random()*building.length);
 		building[x5][y5] = new GuessingGame(x5, y5);
+		
+		//Create a staff room
+		int x6 = (int)(Math.random()*building.length);
+		int y6 = (int)(Math.random()*building.length);
+		building[x6][y6] = new StaffRoom(x6, y6);
 		
 			
 		Board map = new Board(building);
