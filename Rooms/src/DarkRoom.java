@@ -41,7 +41,7 @@ public class DarkRoom extends Room {
 					x3.leaveRoom(x);
 					darkroom = false;
 				}
-			 } while (darkroom);
+			 } while(darkroom);
 			}
 		}
 

@@ -16,7 +16,6 @@ public class Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		x.setKeys(this.keys);
 	}
 	public void leaveRoom(Person p) {
 		// TODO Auto-generated method stub

@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Riddle extends Room {
@@ -19,32 +20,69 @@ private Person x1;
 		x.setyLoc(this.yLoc);
 		System.out.println("You've found a riddle room...");
 		System.out.println("A text reads: Solve this riddle for a key or start over again:");
-		System.out.println("I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost everybody.");
+		System.out.println(getRandomRiddle());
 		while(riddle) {
 			Scanner in = new Scanner(System.in);
 			String statement = in.nextLine();
 			
 			do { 
-				if (findKeyword(statement, "Pencil Lead", 0) >= 0)
-			{
+				if (findKeyword(statement, "Pencil Lead",0) >=0 
+						|| findKeyword(statement, "A Watermelon", 0) >= 0 
+						|| findKeyword(statement, "A cloud",0) >=0 
+						|| findKeyword(statement, "A tennis ball",0) >=0 
+						|| findKeyword(statement, "An iPad",0) >=0 
+						|| findKeyword(statement, "1461",0) >=0 
+						|| findKeyword(statement, "Ground beef",0) >=0 
+						|| findKeyword(statement, "True friendship",0) >=0 
+						|| findKeyword(statement, "Lobster",0) >=0)
+				{
 				System.out.println("Correct!");
 				occupant = x;
 				int keys = 1;
         		x.keyTotal(x.getKeys()+1);
         		boolean key = true;
-        		riddle =false;
-        		
-		}
-			else
-				 System.out.println("Try again!");
-				
+        		riddle = false;
+				}
+			else {
+				System.out.println("Try again!");
+				System.out.println(getRandomRiddle());
+				String statement1 = in.nextLine();
+				if (findKeyword(statement1, "Pencil Lead",0) >=0 
+						|| findKeyword(statement1, "A Watermelon", 0) >= 0 
+						|| findKeyword(statement1, "A cloud",0) >=0 
+						|| findKeyword(statement1, "A tennis ball",0) >=0 
+						|| findKeyword(statement1, "An iPad",0) >=0 
+						|| findKeyword(statement1, "1461",0) >=0 
+						|| findKeyword(statement1, "Ground beef",0) >=0 
+						|| findKeyword(statement1, "True friendship",0) >=0 
+						|| findKeyword(statement1, "Lobster",0) >=0)
+				{
+				System.out.println("Correct!");
+				occupant = x;
+				int keys = 1;
+        		x.keyTotal(x.getKeys()+1);
+        		boolean key = true;
+        		riddle = false;
 					
-		} while(riddle);
+		}}} while(riddle);
 		}
 		}
 	
+	private String getRandomRiddle()
+	{
+		Random r = new Random ();
+		{	
+			return riddles [r.nextInt(riddles.length)];
+		}
 	
-
+	}
+	private String [] riddles = {"I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost everybody.",
+									"You go at red and stop at green. What am I?", "What is easy to spot but hard to find?",
+									"I fly without wings and cry without eyes. What am I?", "What can you serve but not eat?",
+									"What is a frog’s favorite electronic device?","How many days are there in 4 years?",
+									"What do you call a cow with no legs?",
+									"What costs nothing but is very hard to find and can easily be lost?",
+									"What goes into the water black and comes out red?"};
 	
 	private int findKeyword(String statement, String goal,
 			int startPos)
