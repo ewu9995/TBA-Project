@@ -1,3 +1,6 @@
+package rooms;
+import person.Person;
+
 public class Room {
 	Person occupant;
 	int xLoc,yLoc;

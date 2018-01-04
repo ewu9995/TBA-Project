@@ -1,3 +1,5 @@
+package board;
+import rooms.Room;
 
 public class Board {
 	private static Room [][] rooms;

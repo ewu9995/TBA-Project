@@ -1,3 +1,5 @@
+package rooms;
+import person.Person;
 
 public class Hallway extends Room{
 

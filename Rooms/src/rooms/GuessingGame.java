@@ -1,5 +1,10 @@
+package rooms;
 import java.util.Scanner;
 
+import person.Person;
+import runner.Runner;
+
+//Evan Wu TBA project
 public class GuessingGame extends Room {
 	public boolean key = false;
 	private boolean explored = false;
@@ -25,7 +30,7 @@ public class GuessingGame extends Room {
             Scanner a = new Scanner(System.in);
             int guess;
             do {
-                  System.out.print("Enter a number from 1-100 ");
+                  System.out.print("Enter a number from 1-100 (Value only!)");
                   guess = a.nextInt();
                   if (guess == number) {
                 		System.out.println("Correct!");

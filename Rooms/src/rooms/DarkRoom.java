@@ -1,4 +1,8 @@
+package rooms;
 import java.util.Scanner;
+
+import person.Person;
+import runner.Runner;
 public class DarkRoom extends Room {
 
 	private boolean explored = false;
@@ -17,7 +21,7 @@ public class DarkRoom extends Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		System.out.println("You've found this dark room...");
+		System.out.println("You've found this mysterious room...");
 		System.out.println("Would you like to open it?");
 		while(darkroom)
 		{		
@@ -27,7 +31,7 @@ public class DarkRoom extends Room {
 				 if (findKeyword(statement, "Yes", 0) >= 0)
 			 
 				{
-					System.out.println( "The door suddenly locks behind you... You feel your way around the dark room... You find a sharp object -- it's a key!") ;
+					System.out.println( "The door suddenly locks behind you... You feel your way around this dark room... You find a sharp object -- it's a key!") ;
 					int keys = 1;
 	        		x.getKeys();
 	        		x.keyTotal();

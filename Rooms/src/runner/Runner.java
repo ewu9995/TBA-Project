@@ -1,5 +1,16 @@
+package runner;
 //Evan Wu TBA Project
 import java.util.Scanner;
+
+import board.Board;
+import person.Person;
+import rooms.DarkRoom;
+import rooms.GameOver;
+import rooms.GuessingGame;
+import rooms.Hallway;
+import rooms.Riddle;
+import rooms.Room;
+import rooms.WinningRoom;
 
 public class Runner {
 	

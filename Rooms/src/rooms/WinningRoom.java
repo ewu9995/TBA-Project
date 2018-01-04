@@ -1,3 +1,7 @@
+package rooms;
+import person.Person;
+import runner.Runner;
+
 public class WinningRoom extends Room {
 
 private boolean winning = true;
@@ -15,6 +19,7 @@ private boolean winning = true;
 		boolean i = (x.getKeys() >= 3);
 		while (winning) {
 		if(i) {
+		System.out.println("You have the needed amount of keys to open the door with: " + x.getKeys());
 		System.out.println("You open the door");
 		System.out.println("You see the light of day.");
 		System.out.println("Congratulations! You have escaped! ＼(＾O＾)／\n" + 
@@ -23,7 +28,7 @@ private boolean winning = true;
 		winning = false;
 	}
 		else {
-			System.out.println("You don't have enough keys, try again!");
+			System.out.println("You don't have enough keys, try again! (3 or more!)");
 			Room r = new Room(keys, keys);
 			r.enterRoom(x);
 			winning = false;

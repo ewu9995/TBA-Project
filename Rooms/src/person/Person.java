@@ -1,3 +1,4 @@
+package person;
 public class Person {
 	String firstName;
 	String familyName;

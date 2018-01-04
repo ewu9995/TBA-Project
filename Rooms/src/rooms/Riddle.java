@@ -1,5 +1,9 @@
+package rooms;
 import java.util.Random;
 import java.util.Scanner;
+
+import person.Person;
+import runner.Runner;
 
 public class Riddle extends Room {
 
@@ -18,8 +22,9 @@ private Person x1;
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		System.out.println("You've found a riddle room...");
-		System.out.println("A text reads: Solve this riddle for a key or start over again:");
+		System.out.println("You've found a room...");
+		System.out.println("There are pictures and words all over the place...");
+		System.out.println("A text reads: Solve this riddle for a key:");
 		System.out.println(getRandomRiddle());
 		while(riddle) {
 			Scanner in = new Scanner(System.in);
