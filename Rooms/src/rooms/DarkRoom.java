@@ -23,7 +23,7 @@ public class DarkRoom extends Room {
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 		System.out.println("You've found this mysterious room...");
-		System.out.println("Would you like to open it?");
+		System.out.println("Would you like to open it? (Respond with yes or no)");
 		while(darkroom)
 		{		
 			Scanner in = new Scanner (System.in);

@@ -26,7 +26,7 @@ public class GameOver extends Room {
 				" | | |_ | / /\\ \\ | |\\/| |  __|   | |  | |\\ \\/ / |  __| |  _  / \r\n" + 
 				" | |__| |/ ____ \\| |  | | |____  | |__| | \\  /  | |____| | \\ \\ \r\n" + 
 				"  \\_____/_/    \\_\\_|  |_|______|  \\____/   \\/   |______|_|  \\_\\");
-		System.out.println("  Uh-oh, you've fell into a trap! Start over? (Respond with yes or no.)");
+		System.out.println("  Uh-oh, you've found the game over room! Start over? (Respond with yes or no.)");
 		
 	//user is given choice to restart the game or rage quit
 	while (choice) {
