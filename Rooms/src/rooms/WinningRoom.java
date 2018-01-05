@@ -12,6 +12,11 @@ private boolean explored = false;
 		super(x, y);
 		// TODO Auto-generated constructor stub
 	}
+	
+	//overloaded constructor
+	public WinningRoom() {	
+	}
+	
 	@Override
 	public void enterRoom(Person x) {
 		// TODO Auto-generated method stub
@@ -32,7 +37,7 @@ private boolean explored = false;
 		//error message if user does not have enough keys
 		else {
 			System.out.println("You don't have enough keys, try again! (3 or more keys needed!)");
-			Room r = new Room(keys, keys);
+			Room r = new Room();
 			r.enterRoom(x);
 			winning = false;
 			}	

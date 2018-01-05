@@ -17,6 +17,10 @@ public class DarkRoom extends Room {
 		super(x,y);
 	}
 	
+	//overloaded constructor
+	public DarkRoom() {
+	}
+	
 	public void enterRoom(Person x) {
 		// TODO Auto-generated method stub
 		occupant = x;
@@ -43,7 +47,7 @@ public class DarkRoom extends Room {
 			 else if (findKeyword(statement, "No", 0) >= 0)
 				{
 					System.out.println("You leave the room.");
-					DarkRoom x3 = new DarkRoom(xLoc, xLoc);
+					DarkRoom x3 = new DarkRoom();
 					x3.leaveRoom(x);
 					darkroom = false;
 

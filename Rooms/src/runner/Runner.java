@@ -125,7 +125,7 @@ public class Runner {
 		String statement1 = x.nextLine();
 		if (findKeyword(statement1, "large", 0) >= 0)//will create a large board
 		{
-			  Room[][] building = new Room[7][7];
+			  Room[][] building = new Room[8][8];
 			  return building;
 		}
 		if (findKeyword(statement1, "medium", 0) >= 0)//creates a medium board

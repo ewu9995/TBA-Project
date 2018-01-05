@@ -16,6 +16,13 @@ public class Room {
 		xLoc = x;
 		yLoc = y;
 	}
+	
+	//overloaded constructor
+	public Room()
+	{
+		
+	}
+	
 	public void enterRoom(Person x)
 	{
 		System.out.println("You are moving around.");
