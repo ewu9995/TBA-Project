@@ -18,6 +18,7 @@ public class GuessingGame extends Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		explored = true;
 		System.out.println("You've found a room filled with numbers...");
 		System.out.println("You think to yourself: Math!?!!!");
 		System.out.println("You look around for clues on how to escape....");
@@ -29,7 +30,7 @@ public class GuessingGame extends Room {
             Scanner a = new Scanner(System.in);
             int guess;
             do {
-                  System.out.print("Enter a number from 1-100 (Value only!)");
+                  System.out.print("Enter a number from 1-100 (Input value only!)");
                   guess = a.nextInt();
                   if (guess == number) {
                 		System.out.println("Correct!");
@@ -48,23 +49,26 @@ public class GuessingGame extends Room {
 	}
 
 	
-
+	//see rooms.DarkRoom.print() for comments
 	public void print()
 	{
 		if(explored == false && occupant == null)
 		{
 			System.out.print("[ ]");
 		}
+		
+		else if(explored == true)
+		{
+			System.out.print("[G]");
+		}
+		
 		else if(occupant != null)
 		{
 			System.out.print("[");
 			occupant.print();
 			System.out.print("]");
 		}
-		else if(explored  == true)
-		{
-			System.out.print("[G]");
-		}
+	
 	}
 
 	

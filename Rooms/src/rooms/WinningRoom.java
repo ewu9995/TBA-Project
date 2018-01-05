@@ -6,6 +6,7 @@ import runner.Runner;
 public class WinningRoom extends Room {
 
 private boolean winning = true;
+private boolean explored = false;
 
 	public WinningRoom(int x, int y) {
 		super(x, y);
@@ -26,16 +27,37 @@ private boolean winning = true;
 		System.out.println("Congratulations! You have escaped! ヽ(´ー｀)ノ");
 		Runner.gameOff();
 		winning = false;
+		explored = true;
 		}
 		//error message if user does not have enough keys
 		else {
-			System.out.println("You don't have enough keys, try again! (3 or more!)");
+			System.out.println("You don't have enough keys, try again! (3 or more keys needed!)");
 			Room r = new Room(keys, keys);
 			r.enterRoom(x);
 			winning = false;
+			}	
 		}
-			
 	}
-
-}
+	
+	//see rooms.DarkRoom.print() for comments
+	public void print()
+	{
+		if(explored  == false && occupant == null)
+		{
+			System.out.print("[ ]");
+		}
+		
+		else if(explored == true)
+		{
+			System.out.print("[W]");
+		}
+		
+		else if(occupant != null)
+		{
+			System.out.print("[");
+			occupant.print();
+			System.out.print("]");
+		}
+	}
+	
 }

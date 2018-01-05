@@ -23,6 +23,7 @@ private boolean explored = false;
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		explored = true;
 		System.out.println("You've found a room...");
 		System.out.println("There are pictures and words all over the place...");
 		System.out.println("A text reads: Solve this riddle for a key:");
@@ -32,7 +33,7 @@ private boolean explored = false;
 			String statement = in.nextLine();
 			
 			do { 
-				//correct answers
+				//correct answers to riddle
 				if (findKeyword(statement, "Pencil Lead",0) >=0 
 						|| findKeyword(statement, "A Watermelon", 0) >= 0 
 						|| findKeyword(statement, "A cloud",0) >=0 
@@ -141,22 +142,24 @@ private boolean explored = false;
 		return -1;
 	}
 	
-	
+	//see rooms.DarkRoom.print() for comments
 	public void print()
 	{
 		if(explored == false && occupant == null)
 		{
 			System.out.print("[ ]");
 		}
+		
+		else if(explored == true)
+		{
+			System.out.print("[R]");
+		}
+		
 		else if(occupant != null)
 		{
 			System.out.print("[");
 			occupant.print();
 			System.out.print("]");
-		}
-		else if(explored == true)
-		{
-			System.out.print("[R]");
 		}
 	}
 

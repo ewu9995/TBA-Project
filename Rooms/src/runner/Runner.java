@@ -31,14 +31,15 @@ public class Runner {
 		//Gets user's name
 		Scanner k = new Scanner(System.in);
 		String name = k.nextLine();
-		System.out.println("Hello " + name + "," +" to begin, choose your room size.");
+		System.out.println("Hello " + name + "." +" To begin, choose your room size.");
 		System.out.println("\n");
 		//choose board
 		Room [][] building = chooseBoard();
-		System.out.println("Tip: Rooms will teleport you... and watch out for the Game Over room!!");
+		System.out.println("Tip: Some rooms can teleport you and watch out for the Game Over room!!");
 		System.out.println("\n");
 		System.out.println("Good luck!");
-			
+		System.out.println("\n");
+		
 		//Fill the building with normal rooms
 		for (int x = 0; x < building.length; x++)
 		{
@@ -52,7 +53,7 @@ public class Runner {
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[0][1] = new WinningRoom(x, y);
+		building[x][y] = new WinningRoom(x, y);
 		
 		//Create a empty room
 		int x1 = (int)(Math.random()*building.length);
@@ -72,7 +73,7 @@ public class Runner {
 		//Create a dark room
 		int x4 = (int)(Math.random()*building.length);
 		int y4 = (int)(Math.random()*building.length);
-		building[x4][x4] = new DarkRoom(x4, y4);
+		building[x4][y4] = new DarkRoom(x4, y4);
 		
 		//Create a room where user will guess numbers
 		int x5 = (int)(Math.random()*building.length);

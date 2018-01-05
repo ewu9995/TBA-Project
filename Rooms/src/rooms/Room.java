@@ -20,6 +20,7 @@ public class Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		explored = true;
 	}
 	public void leaveRoom(Person p) {
 		// TODO Auto-generated method stub
@@ -27,21 +28,25 @@ public class Room {
 	}
 	
 	//prints out the room (taken from class discussion)
+	//see rooms.DarkRoom.print() for detailed comments
 	public void print()
 	{
 		if(explored == false && occupant == null)
 		{
 			System.out.print("[ ]");
 		}
+		
+		else if(explored == true)
+		{
+			System.out.print("[X]");
+		}
+		
 		else if(occupant != null)
 		{
 			System.out.print("[");
 			occupant.print();
 			System.out.print("]");
 		}
-		else if(explored == true)
-		{
-			System.out.print("[X]");
-		}
+	
 	}
 }

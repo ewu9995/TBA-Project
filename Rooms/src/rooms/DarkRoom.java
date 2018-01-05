@@ -22,6 +22,7 @@ public class DarkRoom extends Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		explored = true;
 		System.out.println("You've found this mysterious room...");
 		System.out.println("Would you like to open it? (Respond with yes or no)");
 		while(darkroom)
@@ -36,6 +37,7 @@ public class DarkRoom extends Room {
 	        		x.getKeys(); //adds keys
 	        		x.keyTotal(); 
 	        		darkroom = false;
+	        		
 		           
 				}
 			 else if (findKeyword(statement, "No", 0) >= 0)
@@ -44,6 +46,7 @@ public class DarkRoom extends Room {
 					DarkRoom x3 = new DarkRoom(xLoc, xLoc);
 					x3.leaveRoom(x);
 					darkroom = false;
+
 				}
 			 } while(darkroom);
 			}
@@ -99,24 +102,24 @@ public class DarkRoom extends Room {
 	}
 	
 
-	
+	//checks conditions to see how the room should be printed on the board
 	public void print()
 	{
-		if(explored  == false && occupant == null)
+		if(explored  == false && occupant == null) //explored and occupant is false
 		{
 			System.out.print("[ ]");
 		}
-		else if(occupant != null)
+		else if(explored == true) //explored is true; has to be before the condition after as if-else statements prints out first case that conition meets
+		{
+			System.out.print("[D]");
+		}
+		
+		else if(occupant != null && explored == true) //occupant and explored is true
 		{
 			System.out.print("[");
 			occupant.print();
 			System.out.print("]");
 		}
-		else if(explored == true)
-		{
-			System.out.print("[D]");
-		}
 	}
-
 	
 }
