@@ -18,6 +18,7 @@ private boolean explored = false;
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		explored = true;
 		boolean i = (x.getKeys() >= 3); //three keys needed to escape; couldnt convert int to boolean so created a new boolean 
 		while (winning) {
 		if(i) {
@@ -27,7 +28,6 @@ private boolean explored = false;
 		System.out.println("Congratulations! You have escaped! ヽ(´ー｀)ノ");
 		Runner.gameOff();
 		winning = false;
-		explored = true;
 		}
 		//error message if user does not have enough keys
 		else {
@@ -52,7 +52,7 @@ private boolean explored = false;
 			System.out.print("[W]");
 		}
 		
-		else if(occupant != null)
+		else if(occupant != null )
 		{
 			System.out.print("[");
 			occupant.print();

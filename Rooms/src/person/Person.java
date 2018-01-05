@@ -42,7 +42,7 @@ public class Person {
 	}
 
 	public void print() {
-		System.out.print("O"); //user will appear as [O] sometimes
+		System.out.print("O"); //board will appear as [O] if condition is met
 	}
 	
 	public int getKeys() {

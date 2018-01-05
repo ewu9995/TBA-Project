@@ -109,12 +109,12 @@ public class DarkRoom extends Room {
 		{
 			System.out.print("[ ]");
 		}
-		else if(explored == true) //explored is true; has to be before the condition after as if-else statements prints out first case that conition meets
+		else if(explored == true) //explored is true; has to be before the condition after as if-else statements prints out first case that condition meets
 		{
 			System.out.print("[D]");
 		}
 		
-		else if(occupant != null && explored == true) //occupant and explored is true
+		else if(occupant != null ) //occupant is true
 		{
 			System.out.print("[");
 			occupant.print();

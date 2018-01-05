@@ -2,6 +2,8 @@ package rooms;
 import person.Person;
 
 //Evan Wu TBA Project
+
+//This room is used as empty space (things like hallways)
 public class Room {
 	Person occupant;
 	int xLoc,yLoc;
