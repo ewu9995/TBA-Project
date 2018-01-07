@@ -10,7 +10,6 @@ public class MathGame extends Room{
 	
 	private boolean explored = false;
 	private boolean math = true;
-	private String[] args;
 	
 	public MathGame(int x, int y) {
 		super(x,y);
