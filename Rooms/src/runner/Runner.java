@@ -9,6 +9,7 @@ import rooms.DarkRoom;
 import rooms.EmptyRoom;
 import rooms.GameOver;
 import rooms.GuessingGame;
+import rooms.MathGame;
 import rooms.MysteryRoom;
 import rooms.Riddle;
 import rooms.Room;
@@ -89,6 +90,11 @@ public class Runner {
 		int x7 = (int)(Math.random()*building.length);
 		int y7 = (int)(Math.random()*building.length);
 		building[x7][y7] = new MysteryRoom(x7, y7);
+		
+		//Create a mystery room
+		int x8 = (int)(Math.random()*building.length);
+		int y8 = (int)(Math.random()*building.length);
+		building[x8][y8] = new MathGame(x8, y8);
 		
 			
 		Board map = new Board(building);

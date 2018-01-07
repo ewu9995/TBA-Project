@@ -45,17 +45,18 @@ public class Room {
 			System.out.print("[ ]");
 		}
 		
-		else if(explored == true)
-		{
-			System.out.print("[X]");
-		}
-		
 		else if(occupant != null)
 		{
 			System.out.print("[");
 			occupant.print();
 			System.out.print("]");
 		}
-	
+		
+		else if(explored == true)
+		{
+			System.out.print("[ ]");
+		}
+		
+		
 	}
 }
