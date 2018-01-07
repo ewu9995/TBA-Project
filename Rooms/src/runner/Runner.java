@@ -91,7 +91,7 @@ public class Runner {
 		int y7 = (int)(Math.random()*building.length);
 		building[x7][y7] = new MysteryRoom(x7, y7);
 		
-		//Create a mystery room
+		//Create a math game room
 		int x8 = (int)(Math.random()*building.length);
 		int y8 = (int)(Math.random()*building.length);
 		building[x8][y8] = new MathGame(x8, y8);

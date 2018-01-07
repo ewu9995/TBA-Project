@@ -32,14 +32,14 @@ public class MathGame extends Room{
 		while (math) {
 		Scanner in = new Scanner (System.in);
 		String statement = in.nextLine(); 
-		
+		//user choose b/w yes or no
 		if (findKeyword(statement, "Yes", 0) >= 0) {
 			int a = (int) (Math.random()*100);//random numbers generated
 			int b = (int) (Math.random()*100); //random numbers generated
 			System.out.println("You chose yes. Would you like to add, subtract, or multiply?");
 			Scanner m = new Scanner (System.in);
 			String statement1 = m.nextLine(); 
-			
+		//user chooses which type of math they want to solve (no division because of rounding issues)	
 		if (findKeyword(statement1, "add", 0) >= 0)
 			{	
 				int c = a+b;
